@@ -1,0 +1,44 @@
+.static_resource{
+
+}
+.static_resource .left_content{
+  width: 280px;
+  float: left;
+  border: 1px solid #bdbdbd;
+}
+.static_resource .left_content .nav>li{
+  height: 48px;
+  background: #a0cce9;
+  border-bottom: 1px solid #ffffff;
+  font-size: 14px;
+  line-height: 48px;
+  padding-left: 60px;
+}
+.static_resource .right_content{
+  width: 920px;
+  float: left;
+  padding: 30px 60px;
+  border: 1px solid #bdbdbd;
+}
+.static_resource .right_content h2{
+  font-size: 20px;
+  border-bottom: 3px solid #5685eb;
+  padding-bottom: 20px;
+}
+.static_resource .right_content .content{
+  padding-top: 20px;
+  line-height: 20px;
+}
+
+.about .content>img{
+  width: 380px;
+  height: 160px;
+  float: left;
+  margin-right: 25px;
+}
+.about .content hr{
+  height: 30px;
+}
+.about .content div h3{
+  
+}

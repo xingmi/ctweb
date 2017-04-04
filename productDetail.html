@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>产品详情页</title>
+  <link rel="stylesheet" type="text/css" href="/static/style/main.css">
+  <link rel="stylesheet" type="text/css" href="/static/style/product_detail.css">
+</head>
+<body>
+<div class="product" v-cloak>
+  <div  style="display: none">{{productDetail}}</div>
+  <top-header></top-header>
+  <div class="product_detail">
+    <div class="banner">
+        <img src="/static/images/productDetail/product_detail_banner.jpg" />
+        <apply-module title="贷款免费申请" showamount="true"></apply-module>
+    </div>
+    <div class="content container clearfix">
+        <div class="left_content">
+          <h3>贷款须知</h3>
+          <dl>
+            <dt>申请条件</dt>
+            <dd v-html="parserRequirements" class="grey_color" style=""></dd>
+            <dt>所需材料</dt>
+            <dd v-html="parserMaterials" class="grey_color" style=""></dd>
+            <dt>提前还款</dt>
+            <dd>可提前还款，没有违约金。</dd>
+            <dt>办理流程</dt>
+            <dd>
+              <img src="/static/images/productDetail/flow.jpg">
+            </dd>
+          </dl>
+        </div>
+        <div class="right_content">
+            <div class="main_module">
+              <div class="img_module clearfix">
+                  <img :src="productDetail.icon">
+                  <div>
+                    <h2>{{productDetail.name}}<i>{{productDetail.type | loanValue}}</i></h2>
+                    <p><span>月息：{{productDetail.interest}}%</span><span>{{productDetail.lendingDate}}天放款</span></p>
+                  </div>
+              </div>
+              <div class="detail_module">
+                <div class="input_module clearfix">
+                    <div>
+                      <label>金额 <input type="" name="" v-model="selectParams.amount" @change="changeAmount()"></label>
+                      <span>额度范围   {{productDetail.minAmount}}万~{{productDetail.maxAmount}}万</span>
+                    </div>
+                    <div class="time">
+                      期限
+                      <div class="input">
+                        <span class="term">{{selectParams.term}}个月</span>
+                        <select v-model="term" >
+                            <option v-for="n in productDetail.maxTerm" v-if="n >= productDetail.minTerm">{{n}}</option>
+                        </select>
+                      </div>
+                      <span>期限范围   {{productDetail.minTerm}}~{{productDetail.maxTerm}}个月</span>
+                    </div>
+                </div>
+                <div class="progress_module">
+                  <div>
+                    <span class="lixi" :style="{width: widthCalculateInterest + '%'}"></span>
+                    <span class="feiyong" :style="{width: widthCalculateFee + '%'}"></span>
+                  </div>
+                </div>
+                <div class="progress_text clearfix">
+                  <span>总利息&nbsp;&nbsp;{{interest.interest | toFixed}}元</span>
+                  <span>贷款&nbsp;&nbsp;{{selectParams.amount*10000 | moneyFormat}}/{{selectParams.term}}个月</span>
+                  <span>月供&nbsp;&nbsp;{{interest.monthly | toFixed}}元</span>
+                  <span>一次性费用&nbsp;&nbsp;{{interest.fee | toFixed}}元</span>
+                </div>
+                <div class="interest_msg">
+                  <h3>利率说明</h3>
+                  <table>
+                    <thead><tr><th>贷款期限（月）</th> <th>还款方式</th> <th>一次性手续费</th> <th>月手续费率</th></tr></thead>
+                    <tbody>
+                      <tr v-for="item in productDetail.interests">
+                        <td v-if="item.minTerm == item.maxTerm">
+                            {{item.minTerm}}
+                        </td>
+                        <td v-else>
+                            {{item.minTerm}} ~ {{item.maxTerm}}
+                        </td>
+                        <td>{{item.refundType | refundsValue}}</td>
+                        <td>{{item.fee}}</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="text_module">
+              <h4>几种费用有什么区别</h4>
+              <div>
+                等额本息：按贷款金额计算，不随剩余本金变化而减少；<br/>
+                等额本金：按剩余本金计算，随每月剩余本金变化而减少；<br/>
+                一次性：按贷款金额计算，在放款时一次性先收取；<br/>
+                先息后本：贷款本金到期一次性偿还，每月支付利息。
+              </div>
+            </div>
+        </div>
+
+    </div>
+  </div>
+  <bottom-footer></bottom-footer>
+</div>
+<script type="text/javascript"  src="/dist/productDetail.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>产品详情页</title>
+  <link rel="stylesheet" type="text/css" href="/static/style/main.css">
+  <link rel="stylesheet" type="text/css" href="/static/style/product_list.css">
+</head>
+<body>
+<div class="product_list" v-cloak>
+  <top-header hidelogo="true"></top-header>
+  <div class="head_content container">
+      <logo-module></logo-module>
+      <div class="product_nav">
+          <ul class="first_nav clearfix">
+            <li><a href="">首页</a></li>
+            <li>
+              <span class="first_title">贷款人群<i></i></span>
+              <dl>
+                <dd class="pull_subli" v-for="people in datas.peoples">
+                    <label @change="selectPeople(people.value)">
+                        <input type="checkbox" :value="people.value" v-model="tmpSearchParams.peoples" />
+                        <span>{{people.text}}</span>
+                    </label>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <span class="first_title">资产贷款<i></i></span>
+              <dl>
+                <dd class="pull_subli" v-for="asset in datas.assets"> 
+                    <label @change="selectAssets(asset.value)">
+                        <input type="checkbox" :value="asset.value" v-model="tmpSearchParams.assets"/>
+                        <span>{{asset.text}}</span>
+                    </label>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <span class="first_title">信用贷款<i></i></span>
+              <dl>
+                <dd class="pull_subli" v-for="credit in datas.credits">
+                    <label @change="selectCredit(credit.value)">
+                        <input type="checkbox" :value="credit.value" v-model="tmpSearchParams.credits"/>
+                        <span>{{credit.text}}</span>
+                    </label>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <span class="first_title">还款方式<i></i></span>
+              <dl>
+                <dd class="pull_subli" v-for="refund in datas.refunds">
+                    <label @change="selectRefund(refund.value)">
+                        <input type="checkbox" :value="refund.value" v-model="tmpSearchParams.refunds"/>
+                        <span>{{refund.text}}</span>
+                    </label>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <span class="first_title">机构类型<i></i></span>
+              <dl>
+                <dd class="pull_subli" v-for="institution in datas.institutions">
+                    <label @change="selectInstitution(institution.value)">
+                        <input type="checkbox" :value="institution.value" v-model="tmpSearchParams.institutions"/>
+                        <span>{{institution.text}}</span>
+                    </label>
+                </dd>
+              </dl>
+            </li>
+          </ul>
+      </div>
+  </div>
+  <div class="banner">
+    <img src="/static/images/productList/banner_word.png"/>
+  </div>
+  <div class="search_params container">
+      已选条件：
+      <span v-for="(value,key) in tmpSearchParams" v-if="value.length" @click="deleteCondition(key)">
+        <template v-if="key == 'peoples'">
+          {{value[0] | peopleValue}}
+        </template>
+        <template v-if="key == 'assets'">
+          {{value[0] | assetsValue}}
+        </template>
+        <template v-if="key == 'credits'">
+          {{value[0] | creditValue}}
+        </template>
+        <template v-if="key == 'refunds'">
+          {{value[0] | refundsValue}}
+        </template>
+        <template v-if="key == 'institutions'">
+          {{value[0] | institutionsValue}}
+        </template>
+      </span>
+      <i @click="deleteConditionAll()">全部清除</i>
+  </div>
+  <div class="product_search container clearfix">
+      <div class="left_product">
+        <div class="search_input">
+          <span class="title">上海热销产品</span>
+          <span class="search_keyword"></span>
+          <span class="search_price"></span>
+        </div>
+        <div class="search_list">
+          <ul>
+            <li class="clearfix" v-for="product in productlist">
+            <a :href="'/productDetail.html?id='+product.id">
+              <div class="product_img">
+                <img :src="product.logo">
+              </div>
+              <div class="product_msg">
+                <h4 class="clearfix">{{product.name}}<i>{{product.type | loanValue}}</i> <span>展开全文</span></h4>
+                <div>
+                    <span class="first">额度：{{product.minAmount}}万-{{product.maxAmount}}万</span>
+                    <span class="second">月息：<i>{{product.interest}}%</i></span>
+                    <span class="third">还款方式: {{ product.refundType | refundsValue}}</span>
+                    <span class="four">放款速度:<i>{{product.lendingDate}}天</i></span>
+                </div>
+              </div>
+            </a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+      <div class="right_product">
+        <dl class="first_module">
+            <dt>高效申请</dt>
+            <dd @click="showDialog('person')"><img src="/static/images/productList/person.jpg"></dd>
+            <dd @click="showDialog('company')"><img src="/static/images/productList/company.jpg"></dd>
+            <dt>常用工具</dt>
+            <dd class="calculator calculator1">房贷计算器</dd>
+            <dd class="calculator calculator2">身价计算器</dd>
+            <dd class="calculator calculator3">贷款计算器</dd>
+            <dd class="calculator calculator4">税费计算器</dd>
+        </dl>
+        <dl>
+          <dt>贷款咨询顾问</dt>
+          <dd class="manager">
+            <img src="/static/images/productList/avator.jpg">
+            <div>
+              <h4>王经理 137-6149-3927</h4>
+              <span>个人贷款专家</span>
+              <span>贷款额度：<i>32-320</i>万</span>
+            </div>
+          </dd>
+          <dd class="manager">
+            <img src="/static/images/productList/avator.jpg">
+            <div>
+              <h4>王经理 137-6149-3927</h4>
+              <span>个人贷款专家</span>
+              <span>贷款额度：<i>32-320</i>万</span>
+            </div>
+          </dd>
+          <dd class="manager">
+            <img src="/static/images/productList/avator.jpg">
+            <div>
+              <h4>王经理 137-6149-3927</h4>
+              <span>个人贷款专家</span>
+              <span>贷款额度：<i>32-320</i>万</span>
+            </div>
+          </dd>
+        </dl>
+        <dl>
+          <dt>投贷天下公众号</dt>
+          <dd class="qr_code">
+            <img src="/static/images/common/qr_code.jpg">
+          </dd>
+
+        </dl>
+      </div>
+  </div>
+  <city-change></city-change>
+  <person-apply></person-apply>
+  <company-apply></company-apply>
+  <bottom-footer></bottom-footer>
+</div>
+<script type="text/javascript"  src="/dist/productList.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+.register{
+}
+.register ul{
+        padding: 0 10px;
+}
+.register li{
+    padding:14px 0;
+    border-bottom: 1px solid #adadad;
+    font-size: .14rem;
+}
+.register li label{
+    width: 100%;
+    display: block;
+}
+.register li span{
+    display: inline-block;
+    width: 90px;
+    color: #030303;
+}
+.register li input{
+    height: 20px;
+    font-size: .14rem;
+    width: 100px;
+}
+.register li  img{
+    float: right;
+    margin-top: -8px;
+}
+.register li .code{
+    float: right;
+    width: 100px;
+    border:1px solid #a0a0a0;
+    height: 24px;
+    line-height: 24px;
+    border-radius:10px;
+    text-align: center;
+    color: #6bb4c5;
+    background: #FFF;
+}
+
+.register .tel_style{
+    background: #f68946;
+    color: #FFF;
+    margin: 20px 10px;
+    display: block;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    font-size: .16rem;
+    border-radius: 5px;
+    position: relative;
+}
+.register .tel_style img{
+    width: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
+    position: absolute;
+    top: 7px;
+    left: 15px;
+}
+.register_btn{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    height: 50px;
+    background: #f2955c;
+    color: #FFF;
+    font-size: .16rem;
+    text-align: center;
+    line-height: 50px;
+}
+
+.apply_success .success_model{
+    position: relative;
+}
+.apply_success .success_model .tel_link{
+    position: absolute;
+    top: 54%;
+    left: 53%;
+    width: 21%;
+    height: 10%;
+}
+.apply_success .link_model{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.apply_success .logo{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
