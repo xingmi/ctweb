@@ -3,11 +3,11 @@
       <div class="container clearfix">
         <img src="../../static/images/common/logo2.png" class="logo">
         <ul class="home_header_nav">
-          <li class="current"><a href="" class="current">首&nbsp;&nbsp;页</a></li>
-          <li class=""><a href="">个人贷款</a></li>
-          <li class=""><a href="">企业贷款</a></li>
-          <li class="current"><a href="" >抵押贷款</a></li>
-          <li class=""><a href="">信用贷款</a></li>
+          <li class=""><a href="" class="">首&nbsp;&nbsp;页</a></li>
+          <li class=""><a href="/productList.html">个人贷款</a></li>
+          <li class=""><a href="/productList.html">企业贷款</a></li>
+          <li class=""><a href="/productList.html">抵押贷款</a></li>
+          <li class=""><a href="/productList.html">信用贷款</a></li>
           <li class=""><a href="">加&nbsp;&nbsp;盟</a></li>
         </ul>
         <div class="search_input">
@@ -46,6 +46,7 @@
   margin: 0 15px;
   border-radius: 4px;
 }
+.home_header .home_header_nav li:hover,
 .home_header .home_header_nav li.current{
   background: #539fee;
   color: #FFF;
