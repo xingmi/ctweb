@@ -157,17 +157,10 @@ body {
   padding: 0 10px;
   width: 250px;
 }
-.apply_container,
-.apply_container_2{
-  position: absolute;
-  top: 0;
-  height: 100%;
-  left:50%;
+.apply_container{
+  
 }
-.apply_container_2{
-  left: -50%;
-  width: 100%;
-}
+
 
 .apply_model h3{
   font-size: 18px;

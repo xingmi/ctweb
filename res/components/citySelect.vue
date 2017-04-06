@@ -61,6 +61,7 @@ module.exports = {
   padding: 20px;
   border: 1px solid #cacaca;
   border-radius: 5px;
+  z-index:10;
 }
 .city_change .city_list .close{
   position: absolute;

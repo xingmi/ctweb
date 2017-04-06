@@ -1,6 +1,5 @@
 <template>
   <div class="container apply_container">
-    <div class="apply_container_2">
       <div :class="showamount == 'true' ? 'apply_model fullItem' : 'apply_model'">
           <div v-if="!applySuccess">
             <h3>{{title}}</h3>
@@ -29,7 +28,7 @@
                 <span class="input_box"><input v-model.number="user.code" placeholder="请输入手机验证码"></span>
               </label>
               <p>请真实填写贷款本人信息，授权并联系您</p>
-              <button v-on:click="postData">提交申请</button>
+              <button v-on:click="postData">{{button}}</button>
             </div>
           </div>
           <div v-else>
@@ -40,7 +39,6 @@
             </div>
           </div>
       </div>
-    </div>
   </div>
 </template>
 
@@ -48,7 +46,7 @@
 var Config = require('../config/globalMain');
 
   module.exports = {
-    props : ['title','showamount'],
+    props : ['title','showamount','button'],
     data : function(){
         return {
           isSend : true,

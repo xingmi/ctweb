@@ -1,6 +1,6 @@
 <template>
   <div class="logo">
-    <img src="/static/images/common/logo2.png">
+    <a href="/index.html"><img src="/static/images/common/logo2.png"></a>
     <span>{{city}}<i @click="changeCity()">[切换城市]</i></span>
   </div>
 </template>
@@ -30,11 +30,14 @@ module.exports = {
 
 <style scoped>
 .logo{
-  margin-top: 30px;
+  margin-top: 15px;
+  float: left;
 }
 .logo img{
   float: left;
   margin-right: 30px;
+  width: 240px;
+  height: 64px;
 }
 .logo span{
   color: #8e8d8d;

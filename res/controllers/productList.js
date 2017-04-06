@@ -136,10 +136,6 @@ var productList = new Vue({
       }
     },
     events : {
-      'cityItem-dispatch' : function(){
-        console.log('333333333')
-        this.hideCityItem = !this.hideCityItem
-      }
     },
     computed : {
         

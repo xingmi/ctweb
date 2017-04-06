@@ -1,0 +1,22 @@
+.collaboration .banner{
+  height: 300px;
+}
+
+.collaboration .banner img{
+  position: absolute;
+  width: 100%;
+}
+
+.collaboration .news_list h4{
+  background: #fafafa;
+  text-align: center;
+  font-size: 14px;
+  height: 46px;
+  line-height: 46px;
+  border-bottom: 1px solid #dadada;
+}
+.collaboration .news_list li{
+  width: 33.3333333%;
+  float: left;
+  padding: 10px 0;
+}

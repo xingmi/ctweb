@@ -6,6 +6,7 @@ module.exports = {
     productDetail : './res/controllers/productDetail.js',
     staticResource : './res/controllers/staticResource.js',
     productList : './res/controllers/productList.js',
+    collaboration : './res/controllers/collaboration.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),
