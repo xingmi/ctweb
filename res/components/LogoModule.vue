@@ -16,7 +16,7 @@ module.exports = {
     }
   },
   mounted : function(){
-    this.city = JSON.parse(sessionStorage['mapData']).current.name
+    this.city = sessionStorage['mapData'] && JSON.parse(sessionStorage['mapData']).current.name
   },
   methods : {
     changeCity : function(){

@@ -169,3 +169,45 @@
 .team .content li div p{
   margin: 5px 0;
 }
+.opinion .content li{
+  margin-top: 10px;
+}
+.opinion .content li span{
+  color: #1196ee;
+  font-size: 14px;
+  display: inline-block; width: 90px;
+  text-align: right;
+  letter-spacing: 2px;
+}
+.opinion .content li span.textarea{
+  line-height: 130px;
+  vertical-align: top;
+}
+.opinion .content li input{
+  border: 1px solid #bfbfbf;
+  height: 28px;
+  line-height: 28px;
+  width: 220px;
+  padding: 0 5px;
+}
+
+.opinion .content li textarea{
+  height: 130px;
+  width: 220px;
+  padding: 5px;
+}
+.opinion .content .button{
+  background: #0090ec;
+  display: block;
+  width: 100px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+  color: #FFF;
+  margin-top: 30px;
+  margin-left: 100px;
+}
+.opinion .content .button:hover{
+  cursor: pointer;
+}

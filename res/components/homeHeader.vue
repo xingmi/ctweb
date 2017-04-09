@@ -4,14 +4,14 @@
         <div class="container clearfix">
           <logo-module></logo-module>
           <ul class="home_header_nav">
-            <li class=""><a href="/index.html" class="">首&nbsp;&nbsp;页</a></li>
-            <li class=""><a href="/productList.html">个人贷款</a></li>
-            <li class=""><a href="/productList.html">企业贷款</a></li>
-            <li class=""><a href="/productList.html">抵押贷款</a></li>
-            <li class=""><a href="/productList.html">信用贷款</a></li>
-            <li class=""><a href="/collaboration.html">加&nbsp;&nbsp;盟</a></li>
+            <li :class="{current: (currentindex == 1)}"><a href="/index.html">首&nbsp;&nbsp;页</a></li>
+            <li :class="{current: (currentindex == 2)}"><a href="/productList.html">个人贷款</a></li>
+            <li :class="{current: (currentindex == 3)}"><a href="/productList.html">企业贷款</a></li>
+            <li :class="{current: (currentindex == 4)}"><a href="/productList.html">抵押贷款</a></li>
+            <li :class="{current: (currentindex == 5)}"><a href="/productList.html">信用贷款</a></li>
+            <li :class="{current: (currentindex == 6)}"><a href="/collaboration.html">加&nbsp;&nbsp;盟</a></li>
           </ul>
-          <div class="search_input">
+          <div class="search_input" v-if="showsearchItem">
             <input type="" name="">
             <i></i>
           </div>
@@ -25,10 +25,19 @@
 var Logo   = require('./LogoModule.vue');
 var CityChange = require('./citySelect.vue');
   module.exports = {
+    props : ['showsearch','currentindex'],
     components: {
       'logo-module' : Logo,
       'city-change' : CityChange,
     },
+    created : function(){
+      console.log(this.currentindex)
+    },
+    computed : {
+      showsearchItem :function(){
+        return this.showsearch == 'true'
+      }
+    }
   }
 </script>
 

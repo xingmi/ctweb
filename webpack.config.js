@@ -3,10 +3,11 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    productDetail : './res/controllers/productDetail.js',
+    productDetail  : './res/controllers/productDetail.js',
     staticResource : './res/controllers/staticResource.js',
-    productList : './res/controllers/productList.js',
-    collaboration : './res/controllers/collaboration.js'
+    productList    : './res/controllers/productList.js',
+    collaboration  : './res/controllers/collaboration.js',
+    index          : './res/controllers/index.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),
