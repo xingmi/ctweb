@@ -47,11 +47,12 @@ module.exports = {
 </script>
 <style scoped>
 .city_change{
-  position: absolute;
+  position: fixed;
   top:100px;
   left: 50%;
   width: 650px;
   min-height: 500px;
+  z-index:100;
 }
 .city_change .city_list{
   position: absolute;
