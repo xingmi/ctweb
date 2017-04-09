@@ -6,8 +6,8 @@
 </template>
 
 <script>
-var bus = require('../config/bus')
-
+var bus = require('../config/bus');
+var Config = require('../config/globalMain');
 module.exports = {
   props : [],
   data : function(){
@@ -16,6 +16,7 @@ module.exports = {
     }
   },
   mounted : function(){
+    this.$http.get(Config.api+ 'products.json')
     this.city = sessionStorage['mapData'] && JSON.parse(sessionStorage['mapData']).current.name
   },
   methods : {
