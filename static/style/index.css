@@ -1,0 +1,11 @@
+.index{}
+
+.index .banner{
+  height: 300px;
+  position: relative;
+}
+.index .banner img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
