@@ -95,7 +95,7 @@ var Toast = require('../widget/toast');
             this.imageCode = "https://api.toudaiworld.com/message/validate.jpg?openid="+Config.openId+"&data=" + new Date().getTime()
         },
         sendCode : function(){
-            if(!this.user.amount){
+            if((this.showamount == 'true')&&!this.user.amount){
                 Toast.show('请填写金额',1000);
                 return;
             }
