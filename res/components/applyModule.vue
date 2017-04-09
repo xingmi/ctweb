@@ -44,6 +44,7 @@
 
 <script>
 var Config = require('../config/globalMain');
+var Toast = require('../widget/toast');
 
   module.exports = {
     props : ['title','showamount','button'],
