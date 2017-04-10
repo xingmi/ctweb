@@ -5,7 +5,7 @@
       <ul class="jolin_lia">
         <li><a href="/aboutUs.html">公司概况</a></li>
         <li><a href="/team.html">核心团队</a></li>
-        <li><a href="">企业文化</a></li>
+        <li><a href="/strategy.html">企业战略</a></li>
         <li><a href="">公司文化</a></li>
       </ul>
     </li>

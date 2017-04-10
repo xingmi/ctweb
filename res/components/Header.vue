@@ -37,16 +37,28 @@
 .header .container .header_nav{
   float: right;
 }
-.header .container .header_nav li {
+.header .container .header_nav li{
   float: left;
-  height: 16px;
-  line-height: 16px;
-  margin-top: 12px;
-  border-right: 1px solid #b6b6b6;
+  height: 44px;
+  line-height: 44px;
+
   padding:0  10px;
+  position: relative;
+}
+.header .container .header_nav li:after{
+  content: "";
+  display: block;
+  height: 15px;
+  width: 1px;
+  position: absolute;
+  right: 0;
+  top: 15px;
+  background: #b6b6b6;
 }
 .header .container .header_nav li.down_load_app{
   color: #82a9e3;
+  padding-left: 25px;
+  background: url('/static/images/common/phone_icon.jpg') no-repeat left center;
 }
 .header .container .header_nav li.tel{
   color: #c3c3c3

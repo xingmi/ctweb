@@ -9,3 +9,52 @@
   height: 100%;
   width: 100%;
 }
+.index .content h2{
+  font-size: 16px;
+  margin: 15px 0;
+  position: relative;
+  border-left: 4px solid #e84013;
+  padding-left: 13px;
+}
+
+.index .content .first_module .left_module{
+  float: left;
+  border: 1px solid #747474;
+  width: 280px;
+}
+.index .content .first_module .left_module dt{
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  color: #5877e9;
+  font-size: 16px;
+}
+.index .content .first_module .left_module dd{
+  border-top: 1px solid #747474;
+  height: 46px;
+  line-height: 46px;
+  font-size: 14px;
+}
+.index .content .first_module .left_module dd a{
+  padding-left: 50px;
+  display: block;
+  height: 100%;
+  padding-right: 20px;
+  background-image: url('/static/images/index/arrow_icon.png');
+  background-repeat: no-repeat;
+  background-position: 230px center;
+  color: #3c74e3;
+}
+.index .content .first_module .left_module dd a:hover{
+  background-color: #d63846;
+  background-image: url('/static/images/index/arrow_icon_hover.png');
+  color:#FFF;
+}
+.index .content .first_module .right_module{
+  float: left;
+  height: 322px;
+  border: 1px solid #747474;
+  margin-left: 10px;
+  width: 890px;
+  overflow: hidden;
+}
