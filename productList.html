@@ -101,13 +101,13 @@
         <div class="search_input">
           <span class="title">{{datas.current.name}}热销产品</span>
           <div class="search search_keyword">
-            <input type="" name="" placeholder="关键字搜索">
-            <i></i>
+            <input v-model="searchTmpParams.keyword" placeholder="关键字搜索">
+            <i @click="selectKeyword()"></i>
           </div>
           <div class="search search_price">
-            <input type="" name="" placeholder="请输入金额">
+            <input v-model="searchTmpParams.amount" placeholder="请输入金额">
             <em>万</em>
-            <i></i>
+            <i @click="selectAmount()"></i>
           </div>
         </div>
         <div class="search_list">

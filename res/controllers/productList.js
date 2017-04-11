@@ -24,6 +24,10 @@ var productList = new Vue({
           credits : [],
           refunds : [],
           institutions : []
+        },
+        searchTmpParams : {
+          keyword : "",
+          amount  : ""
         }
     },
     components: {
@@ -126,6 +130,14 @@ var productList = new Vue({
             this.tmpSearchParams.institutions.shift();
         }
         this.temParams.institutions = this.tmpSearchParams.institutions[0];
+        this.getNewData();
+      },
+      selectKeyword : function(){
+        this.temParams.keyword = this.searchTmpParams.keyword;
+        this.getNewData();
+      },
+      selectAmount : function(){
+        this.temParams.amount = this.searchTmpParams.amount;
         this.getNewData();
       },
 
