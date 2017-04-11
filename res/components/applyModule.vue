@@ -66,7 +66,7 @@ var Toast = require('../widget/toast');
         }
     },
     created : function(){
-      this.imageCode = "https://api.toudaiworld.com/message/validate.jpg?openid=" + Config.openId
+      this.imageCode = "http://api.toudaiworld.com/message/validate.jpg?openid=" + Config.openId
     },
     methods : {
         postData : function(){
@@ -92,7 +92,7 @@ var Toast = require('../widget/toast');
                 });
         },
         resetImageCode : function(){
-            this.imageCode = "https://api.toudaiworld.com/message/validate.jpg?openid="+Config.openId+"&data=" + new Date().getTime()
+            this.imageCode = "http://api.toudaiworld.com/message/validate.jpg?openid="+Config.openId+"&data=" + new Date().getTime()
         },
         sendCode : function(){
             if((this.showamount == 'true')&&!this.user.amount){
