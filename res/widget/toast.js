@@ -2,7 +2,7 @@ var Lodash = require('../lib/lodash');
 // var $  = require('../lib/zepto');
 import $ from '../lib/zepto';
 
-module.exports = {
+var toast =  {
     show: function(title, times, callback) {
         var that = this;
         var html = '<div class="global_toast">' + title + '</div>';
@@ -22,3 +22,5 @@ module.exports = {
         $(".global_toast").remove();
     }
 }
+
+export default toast

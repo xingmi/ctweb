@@ -80,11 +80,20 @@ var CityChange = require('./citySelect.vue');
   height: 24px;
   width: 220px;
   margin-top:35px;
+  position:relative;
 }
 .home_header .search_input input{
   width: 210px;
   height: 100%;
   padding-left: 10px;
+}
+.home_header .search_input i{
+  position: absolute;
+  right: 0;
+  top:0;
+  width: 17px;
+  height: 17px;
+  background:url('/static/images/common/search_icon.jpg') center center;
 }
 
 </style>

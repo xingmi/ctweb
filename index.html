@@ -34,17 +34,33 @@
           <h3>城市热销产品</h3>
           <div class="module">
             <ul>
-              <li>
-                <img src="">
+              <li class="clearfix">
+              <a href="">
+                <img src="/static/images/index/icon1.jpg">
                 <div>
                   <h4>你我贷</h4>
                   <p>
-                    <span>额度：</span>
-                    <span>月息：</span>
-                    <span>还款方式：</span>
-                    <span>放款方式：</span>
+                    <span>额度：2万-4万</span>
+                    <span>月息：<i>1.5%</i></span>
+                    <span>还款方式：等额本息</span>
+                    <span>放款方式：<i>1~2天</i></span>
                   </p>
                 </div>
+              </a>
+              </li>
+              <li class="clearfix">
+              <a href="">
+                <img src="/static/images/index/icon1.jpg">
+                <div>
+                  <h4>你我贷</h4>
+                  <p>
+                    <span>额度：2万-4万</span>
+                    <span>月息：<i>1.5%</i></span>
+                    <span>还款方式：等额本息</span>
+                    <span>放款方式：<i>1~2天</i></span>
+                  </p>
+                </div>
+              </a>
               </li>
             </ul>
           </div>
@@ -77,35 +93,74 @@
               </li>
             </ul>
             <h2>今日推荐</h2>
-            <div class="recommend clearfix">
-              <a href=""><img src="/static/images/index/icon1.jpg"></a>
-              <a href=""><img src="/static/images/index/icon1.jpg"></a>
-              <a href=""><img src="/static/images/index/icon1.jpg"></a>
-              <a href=""><img src="/static/images/index/icon1.jpg"></a>
+            <div class="recommend clearfix"  v-if="homeDetail.icons">
+              <a :href=link.url v-for="link in homeDetail.icons.jrtj.icons">
+                <img :src=link.image1>
+              </a>
             </div>
           </div>
-          <div class="right_module">
+          <div class="right_module" v-if="homeDetail.icons">
             <h2>热门活动</h2>
-            <a href="">
-              <img src="/static/images/index/icon1.jpg">
+            <a :href=homeDetail.icons.rmhd.icons[0].url>
+              <img :src=homeDetail.icons.rmhd.icons[0].image1>
             </a>
           </div>
       </div>
-      <div class="third_moduel">
-        <video src="http://player.video.qiyi.com/9f0fcc53121e7aeb8298f11901e631c1/0/68/v_19rrbbs8yk.swf-albumId=205642201-tvId=648471600-isPurchase=0-cnId=10" controls="controls"></video>
+      <div class="third_module">
+        <video src="http://player.youku.com/player.php/sid/XMjcwODQyMDkxNg==/v.swf" controls="controls"></video>
         <video></video>
       </div>
-      <div class="four_moduel">
-        
+      <div class="four_module clearfix">
+        <div class="left_module news">
+          <img src="/static/images/index/new_1.jpg">
+          <div class="cont">
+            <ul>
+              <li class="clearfix"><img src="/static/images/index/new_1.jpg"><a href="">2017年投贷天下最重的一年，加入我们，有你更精彩</a></li>
+              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台长天信息“投贷天下”平台长天信息“投贷天下”平台长天信息“投贷天下”平台</a></li>
+              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台....</a></li>
+              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台....</a></li>
+              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台....</a></li>
+              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台....</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="right_module news">
+          <img src="/static/images/index/new_1.jpg">
+          <div class="cont">
+            <ul>
+              <li class="clearfix"><img src="/static/images/index/new_1.jpg"><a href="">2017年投贷天下最重的一年，加入我们，有你更精彩</a></li>
+              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台长天信息“投贷天下”平台长天信息“投贷天下”平台长天信息“投贷天下”平台</a></li>
+              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台....</a></li>
+              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台....</a></li>
+              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台....</a></li>
+              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台....</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="five_moduel">
+      <div class="five_module" v-if="homeDetail.links">
         <h2>合作机构</h2>
-        <a href="">
-          <img src="">
-        </a>
+        <ul class="clearfix">
+          <li v-for="link in homeDetail.links.hzjg.links">
+            <a :href=link.url><img :src=link.image1></a>
+          </li>
+        </ul>
       </div>
-      <div class="five_moduel">
+      <div class="six_module">
         <h2>友情链接</h2>
+        <ul class="clearfix">
+          <li><a href="">百度</a></li>
+          <li><a href="">百度</a></li>
+          <li><a href="">百度</a></li>
+          <li><a href="">捱三顶四爱上的</a></li>
+          <li><a href="">百度</a></li>
+          <li><a href="">放水电费是发送到</a></li>
+          <li><a href="">百度</a></li>
+          <li><a href="">百水电费水电费是度</a></li>
+          <li><a href="">百度</a></li>
+          <li><a href="">百度</a></li>
+          <li><a href="">似懂非懂</a></li>
+        </ul>
       </div>
   </div>
 

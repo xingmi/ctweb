@@ -9,7 +9,8 @@ var Toast = require('../widget/toast');
 var productList = new Vue({
     el : '.index',
     data : {
-        
+      homeDetail : {
+      }
     },
     components: {
       'top-header': Header,
@@ -18,9 +19,17 @@ var productList = new Vue({
       'apply-module' : ApplyModule
     },
     created : function(){
-      
+      this.$http.get(Config.api + "home")
+        .then(function(res){
+          if(res.body.code == 0){
+            this.homeDetail = res.body.data
+          }
+        },function(){
+
+        }).bind(this)
     },
     watch : {
+
     },
     methods : {
      

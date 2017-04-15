@@ -21,6 +21,7 @@
   float: left;
   border: 1px solid #747474;
   width: 280px;
+  height: 322px;
 }
 .index .content .first_module .left_module dt{
   height: 44px;
@@ -28,12 +29,16 @@
   text-align: center;padding-left
   color: #5877e9;
   font-size: 18px;
+  border-bottom: 1px solid #747474;
 }
 .index .content .first_module .left_module dd{
-  border-top: 1px solid #747474;
+  border-bottom: 1px solid #747474;
   height: 46px;
   line-height: 46px;
   font-size: 14px;
+}
+.index .content .first_module .left_module dd:nth-child(7){
+  border-bottom: 0;
 }
 .index .content .first_module .left_module dd a{
   padding-left: 50px;
@@ -68,6 +73,47 @@
 .index .content .first_module .right_module .module{
   height: 276px;
   overflow: scroll;
+  padding: 0 2px;
+}
+.index .content .first_module .right_module .module li {
+  padding: 4px 10px;
+  border-bottom: 1px solid #bbbbbb;
+  color: #8e8d8d;
+}
+.index .content .first_module .right_module .module li a{
+  display: block;
+}
+
+.index .content .first_module .right_module .module li img{
+  width: 52px;
+  height: 52px;
+  float: left;
+  -webkit-box-shadow :1px 1px 5px #000;
+  -ms-box-shadow :1px 1px 5px #000;
+  box-shadow :1px 1px 5px #000;
+  margin-right: 15px;
+}
+.index .content .first_module .right_module .module li div{
+  float: left;
+}
+.index .content .first_module .right_module .module li div h4{
+  font-size: 16px;
+  color: #666666;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.index .content .first_module .right_module .module li div p span{
+  display: inline-block;
+  font-size: 14px;
+  width: 170px;
+}
+.index .content .first_module .right_module .module li div p span:nth-child(2) i{
+  color: #f51741;
+  font-size: 18px;
+}
+.index .content .first_module .right_module .module li div p span:nth-child(4) i{
+  color: #000;
+  font-size: 18px;
 }
 
 .index .content .second_module .left_module{
@@ -81,6 +127,7 @@
   border-right: 1px solid #aaaaaa;
   text-align: center;
 }
+
 .index .content .second_module .left_module .shortcut li:last-child{
   border-right: 0;
 }
@@ -116,4 +163,65 @@
 .index .content .second_module .right_module a img{
   width: 100%;
   height: 100%;
+}
+
+.index .content .four_module{
+  margin-top: 25px;
+}
+.index .content .four_module .news{
+  width: 50%;
+  float: left;
+  padding-right: 40px;
+}
+.index .content .four_module .news>img{
+  float: left;
+  margin-right: 20px;
+}
+.index .content .four_module .news .cont{
+  float: left;
+  width: 350px;
+}
+.index .content .four_module .news li{
+  padding:5px 0; 
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.index .content .four_module .news li:hover a{
+ text-decoration: underline;
+}
+.index .content .four_module .news li:first-child{
+  margin-bottom: 30px;
+  white-space: normal;
+}
+
+.index .content .four_module .news li img{
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin-right: 25px;
+}
+.index .content .four_module .news li:first-child{
+  font-size: 16px;
+}
+
+.index .content .five_module li{
+  float: left;
+  width: 12.5%;
+  margin: 10px 0;
+}
+.index .content .five_module li img{
+  width: 120px;
+  height: 34px;
+  border: 1px solid #cbcbcb;
+  display: block;
+}
+.index .content .six_module ul{
+  border-top: 1px solid #cbcbcb;
+}
+.index .content .six_module li{
+  float: left;
+  width: 12.5%;
+  margin: 10px 0;
+
 }
