@@ -27,7 +27,8 @@ new Vue({
     },
     methods : {
       getData : function(){
-        this.title = this.type == 1 ? '金融视点' : '长天资讯',
+        this.title = this.type == 1 ? '金融视点' : '长天资讯';
+        
         this.$http.get(Config.api + 'articles/' + this.id)
         .then(function(res){
             if(res.body.code == 0){   

@@ -24,7 +24,7 @@ new Vue({
       newsList : {}
     },
     created : function(){
-      this.title = this.type == 1 ? '金融视点' : '长天资讯',
+      this.title = this.type == 1 ? '金融视点' : '长天资讯';
       this.getData()
     },
     methods : {
