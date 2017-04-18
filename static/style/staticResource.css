@@ -242,3 +242,55 @@
 .strategy .content .prompt{
   margin-top: 20px;
 }
+.news_list .content .banner{
+  display: block; 
+  width: 100%;
+}
+.news_list .content li{
+  border-bottom: 1px solid #FFF;
+  line-height: 26px;
+  margin: 5px 0;
+  cursor: pointer;
+  font-size: 14px;
+}
+.news_list .content li a{
+  display: block;
+  height: 100%;
+}
+.news_list .content li:hover{
+  border-bottom: 1px solid #444;
+  color: #000;
+}
+.news_list .content li span.time{
+  float: right;
+}
+.news_list .content .nav_page_turn{
+  text-align: center;
+  margin-top: 40px;
+}
+.news_list .content .nav_page_turn span{
+  display: inline-block;
+  padding: 2px 5px;
+}
+.news_list .content .nav_page_turn span i{
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+}
+.news_list .content .nav_page_turn .prev,
+.news_list .content .nav_page_turn .next{
+  cursor: pointer;
+}
+.news_Detail .content h3{
+  margin-top: 20px;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.news_Detail .content h4{
+  text-align: center;
+  margin-top: 10px;
+}
+.news_Detail .content .news_content{
+  padding: 20px;
+}

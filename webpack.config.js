@@ -7,7 +7,9 @@ module.exports = {
     staticResource : './res/controllers/staticResource.js',
     productList    : './res/controllers/productList.js',
     collaboration  : './res/controllers/collaboration.js',
-    index          : './res/controllers/index.js'
+    index          : './res/controllers/index.js',
+    news           : './res/controllers/news.js',
+    newsDetail     : './res/controllers/newsDetail.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),

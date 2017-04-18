@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>新闻列表</title>
+  <link rel="stylesheet" type="text/css" href="/static/style/main.css">
+  <link rel="stylesheet" type="text/css" href="/static/style/staticResource.css">
+</head>
+<body>
+<div class="static_resource" v-cloak>
+  <top-header></top-header>
+  <home-header></home-header>
+  <div class="container clearfix">
+    <div class="left_content">
+    <static-nav currentindex="1"></static-nav>
+    </div>
+    <div class="right_content news_list">
+        <h2>{{title}}</h2>
+        <div class="content">
+          <img src="/static/images/staticResource/news1_banner.jpg" class="banner" v-if="type==1">
+          <img src="/static/images/staticResource/news2_banner.jpg" class="banner" v-if="type==2">
+          <ul>
+            <li v-for="news in newsList.articles" class="clearfix">
+                <a :href="'/newsDetail.html?id='+news.id+'&type='+type">
+                  <span class="time">{{ news.publishTime && new Date(news.publishTime).pattern('yyyy-MM-dd')}}</span>
+                  <span class="sub_title">{{news.title}}</span>
+                </a>
+            </li>
+          </ul>
+          <p class="nav_page_turn">
+            <span class="prev" @click="prevPage()">上一页</span>
+            <span>第<i>{{page}}</i>页</span>
+            <span class="next" @click="nextPage()">下一页</span>
+            <span>共<i>{{newsList.totalPage}}</i>页</span>
+          </p>
+        </div>
+    </div>
+  </div>
+  <bottom-footer></bottom-footer>
+</div>
+<script type="text/javascript"  src="/dist/news.js"></script>
+</body>
+</html>

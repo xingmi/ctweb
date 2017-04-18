@@ -132,7 +132,8 @@ module.exports = {
         configParams : {} ,
         temCredit_registries : [],
         temExpected : [],
-        showdialog : false
+        showdialog : false,
+        temTrade : []
     }
   },
   watch : {

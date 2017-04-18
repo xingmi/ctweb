@@ -22,46 +22,32 @@
         <div class="left_module">
             <dl>
               <dt>全国热销产品</dt>
-              <dd><a href="">融资租赁</a></dd>
-              <dd><a href="">融资租赁</a></dd>
-              <dd><a href="">融资租赁</a></dd>
-              <dd><a href="">融资租赁</a></dd>
-              <dd><a href="">融资租赁</a></dd>
-              <dd><a href="">融资租赁</a></dd>
+              <dd v-for="n in 6">
+                <a href="" v-if="homeDetail.icons && homeDetail.icons.rmcp.icons && homeDetail.icons.rmcp.icons[n-1]">
+                {{homeDetail.icons.rmcp.icons[n-1] && homeDetail.icons.rmcp.icons[n-1].name}}
+                </a>
+              </dd>
             </dl>
         </div>
         <div class="right_module">
           <h3>城市热销产品</h3>
           <div class="module">
             <ul>
-              <li class="clearfix">
-              <a href="">
+              <li class="clearfix" v-for="product in homeDetail.products">
+              <a :href="'/productDetail.html?id='+product.id">
                 <img src="/static/images/index/icon1.jpg">
                 <div>
-                  <h4>你我贷</h4>
+                  <h4>{{product.name}}</h4>
                   <p>
-                    <span>额度：2万-4万</span>
-                    <span>月息：<i>1.5%</i></span>
-                    <span>还款方式：等额本息</span>
-                    <span>放款方式：<i>1~2天</i></span>
+                    <span>额度：{{product.minAmount}}万-{{product.maxAmount}}万</span>
+                    <span>月息：<i>{{product.interest}}%</i></span>
+                    <span>还款方式：{{ product.refundType | refundsValue}}</span>
+                    <span>放款方式：<i>{{product.lendingDate}}天</i></span>
                   </p>
                 </div>
               </a>
               </li>
-              <li class="clearfix">
-              <a href="">
-                <img src="/static/images/index/icon1.jpg">
-                <div>
-                  <h4>你我贷</h4>
-                  <p>
-                    <span>额度：2万-4万</span>
-                    <span>月息：<i>1.5%</i></span>
-                    <span>还款方式：等额本息</span>
-                    <span>放款方式：<i>1~2天</i></span>
-                  </p>
-                </div>
-              </a>
-              </li>
+              
             </ul>
           </div>
         </div>
@@ -112,28 +98,28 @@
       </div>
       <div class="four_module clearfix">
         <div class="left_module news">
-          <img src="/static/images/index/new_1.jpg">
+          <a href="/news.html?type=1"><img src="/static/images/index/new_1.jpg"></a>
           <div class="cont">
-            <ul>
-              <li class="clearfix"><img src="/static/images/index/new_1.jpg"><a href="">2017年投贷天下最重的一年，加入我们，有你更精彩</a></li>
-              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台长天信息“投贷天下”平台长天信息“投贷天下”平台长天信息“投贷天下”平台</a></li>
-              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台....</a></li>
-              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台....</a></li>
-              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台....</a></li>
-              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台....</a></li>
+            <ul v-if="homeDetail.articles && homeDetail.articles.ctjr && homeDetail.articles.ctjr.notices">
+              <li class="clearfix" v-for="(news,index) in homeDetail.articles.ctjr.notices">
+                <a :href="'/newsDetail.html?id='+news.id">
+                <img src="/static/images/index/new_1.jpg" v-if="!index">
+                <span v-if="index">[金融视点]</span>&nbsp;&nbsp;{{news.title}}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
         <div class="right_module news">
-          <img src="/static/images/index/new_1.jpg">
+          <a href="/news.html?type=2"><img src="/static/images/index/new_2.jpg"></a>
           <div class="cont">
-            <ul>
-              <li class="clearfix"><img src="/static/images/index/new_1.jpg"><a href="">2017年投贷天下最重的一年，加入我们，有你更精彩</a></li>
-              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台长天信息“投贷天下”平台长天信息“投贷天下”平台长天信息“投贷天下”平台</a></li>
-              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台....</a></li>
-              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台....</a></li>
-              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台....</a></li>
-              <li class="clearfix"><a href="">[长天新闻]  长天信息“投贷天下”平台....</a></li>
+            <ul v-if="homeDetail.articles && homeDetail.articles.gfzx && homeDetail.articles.gfzx.notices">
+              <li class="clearfix" v-for="(news,index) in homeDetail.articles.gfzx.notices">
+                <a :href="'/newsDetail.html?id='+news.id">
+                <img src="/static/images/index/new_1.jpg" v-if="!index">
+                <span v-if="index">[长天资讯]</span>&nbsp;&nbsp;{{news.title}}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -146,20 +132,11 @@
           </li>
         </ul>
       </div>
-      <div class="six_module">
+      <div class="six_module" v-if="homeDetail.links">
         <h2>友情链接</h2>
         <ul class="clearfix">
-          <li><a href="">百度</a></li>
-          <li><a href="">百度</a></li>
-          <li><a href="">百度</a></li>
-          <li><a href="">捱三顶四爱上的</a></li>
-          <li><a href="">百度</a></li>
-          <li><a href="">放水电费是发送到</a></li>
-          <li><a href="">百度</a></li>
-          <li><a href="">百水电费水电费是度</a></li>
-          <li><a href="">百度</a></li>
-          <li><a href="">百度</a></li>
-          <li><a href="">似懂非懂</a></li>
+          <li v-for="link in homeDetail.links.yqlj.links"><a :href=link.url>{{link.title}}</a></li>
+          
         </ul>
       </div>
   </div>

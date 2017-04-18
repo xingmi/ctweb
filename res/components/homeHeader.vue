@@ -12,8 +12,8 @@
             <li :class="{current: (currentindex == 6)}"><a href="/collaboration.html">加&nbsp;&nbsp;盟</a></li>
           </ul>
           <div class="search_input" v-if="showsearchItem">
-            <input type="" name="">
-            <i></i>
+            <input type="" name="" v-model="keyword">
+            <i @click="searchKeyword()"></i>
           </div>
         </div>
       </div>
@@ -30,12 +30,25 @@ var CityChange = require('./citySelect.vue');
       'logo-module' : Logo,
       'city-change' : CityChange,
     },
+    data : function(){
+      return {
+        keyword : ''
+      }
+    },
     created : function(){
       console.log(this.currentindex)
     },
     computed : {
       showsearchItem :function(){
         return this.showsearch == 'true'
+      }
+    },
+    methods : {
+      searchKeyword : function(){
+        params = {
+          keyword : this.keyword
+        }
+        window.location.href = '/productList.html?searchParams=' + JSON.stringify(params)
       }
     }
   }
@@ -89,12 +102,14 @@ var CityChange = require('./citySelect.vue');
 }
 .home_header .search_input i{
   position: absolute;
-  right: 0;
-  top:0;
+  right: 2px;
+  top: 2px;
   width: 17px;
   height: 17px;
   background:url('/static/images/common/search_icon.jpg') center center;
+  cursor: pointer;
 }
+
 
 </style>
 

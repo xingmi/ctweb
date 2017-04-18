@@ -99,7 +99,7 @@
   <div class="product_search container clearfix">
       <div class="left_product">
         <div class="search_input">
-          <span class="title">{{datas.current.name}}热销产品</span>
+          <span class="title">{{datas.current && datas.current.name}}热销产品</span>
           <div class="search search_keyword">
             <input v-model="searchTmpParams.keyword" placeholder="关键字搜索">
             <i @click="selectKeyword()"></i>
