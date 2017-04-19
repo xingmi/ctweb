@@ -10,7 +10,10 @@ var Toast = require('../widget/toast');
 new Vue({
     el : '.collaboration',
     data : {
-
+      page : 1,
+      size : 12,
+      type : 2,
+      newsList : {}
     },
     components: {
       'top-header': Header,
@@ -19,16 +22,37 @@ new Vue({
       'home-header' : HomeHeader
     },
     created : function(){
-        
-    },
-    watch : {
-       
+      this.getData()
     },
     methods : {
-       
-    },
-    computed : {
-        
+      getData : function(){
+        this.$http.get(Config.api + 'articles',{
+          params : {
+            type : this.type,
+            size : this.size,
+            page : this.page
+          }
+        })
+        .then(function(res){
+            if(res.body.code == 0){   
+              this.newsList = res.body.data
+            }
+        },function(){
+
+        }).bind(this);
+      },
+      nextPage : function(){
+        if(this.page < this.newsList.totalPage){
+          this.page++;
+          this.getData()
+        }
+      },
+      prevPage : function(){
+        if(this.page > 1){
+          this.page--;
+          this.getData()
+        }
+      }
     }
 
 });

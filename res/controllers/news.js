@@ -18,7 +18,7 @@ new Vue({
     },
     data : {
       page : 1,
-      size : 7,
+      size : 12,
       type : utility.getUrlParam('type'),
       title : '',
       newsList : {}

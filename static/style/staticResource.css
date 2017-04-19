@@ -96,6 +96,9 @@
 }
 
 .join .content{}
+.join .content li{
+  margin-top: 15px;
+}
 .join .content li h4{
   padding-left: 15px;
   font-size: 16px;
