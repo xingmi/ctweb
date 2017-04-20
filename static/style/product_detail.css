@@ -68,7 +68,18 @@
   color: #ff2a01;
   font-size: 18px;
   margin-top: 20px;
+
 }
+.product_detail .content .right_content .main_module .img_module div h2 i{
+  background: #f41541;
+  color: #FFF;
+  font-size: 12px;
+  border-radius: 10px;
+  padding: 2px 4px;
+  vertical-align: top;
+  margin-left: 5px;
+}
+
 .product_detail .content .right_content .main_module .img_module div p {
   font-size: 16px;
   color: #4e4e4e;
