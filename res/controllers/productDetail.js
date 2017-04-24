@@ -20,8 +20,8 @@ new Vue({
             amount : '',
             term : ''
         },
-        widthCalculateInterest : 0,
-        widthCalculateFee : 0,
+        // widthCalculateInterest : 0,
+        // widthCalculateFee : 0,
         term : []
     },
     components: {

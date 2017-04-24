@@ -109,7 +109,5 @@ var CityChange = require('./citySelect.vue');
   background:url('/static/images/common/search_icon.jpg') center center;
   cursor: pointer;
 }
-
-
 </style>
 

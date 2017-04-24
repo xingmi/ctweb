@@ -147,6 +147,7 @@
   background: #7eb2f3;
   height: 42px;
   margin-top: 25px;
+  overflow: hidden;
 }
 .product_detail .content .right_content .main_module .detail_module .progress_module div{
   position: absolute;

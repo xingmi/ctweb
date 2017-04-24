@@ -1,6 +1,6 @@
 <template>
-  <div class="city_change" v-if="!hideCityItem">
-    <div class="city_list">
+  <div class="city_change" v-show="!hideCityItem" id="cityListChangeModule">
+    <div class="city_list" id="cityListChange">
       <span class="close" @click="closeItem()">×</span>
       <ul>
         <li v-for="(provincial,index) in cities">
@@ -25,6 +25,9 @@ module.exports = {
   },
   mounted : function(){
     this.cities = JSON.parse(sessionStorage['mapData']).cities
+    var wh = window.innerHeight;
+    document.getElementById('cityListChangeModule').style.height = wh - 100 +'px'
+    document.getElementById('cityListChange').style.height = wh - 100 +'px'
   },
   created : function(){
     var that = this;
@@ -48,7 +51,7 @@ module.exports = {
 <style scoped>
 .city_change{
   position: fixed;
-  top:100px;
+  top:50px;
   left: 50%;
   width: 650px;
   min-height: 500px;
@@ -63,6 +66,7 @@ module.exports = {
   border: 1px solid #cacaca;
   border-radius: 5px;
   z-index:10;
+  overflow:scroll;
 }
 .city_change .city_list .close{
   position: absolute;

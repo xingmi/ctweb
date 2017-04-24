@@ -21,7 +21,7 @@
   float: left;
   border: 1px solid #747474;
   width: 280px;
-  height: 322px;
+  height: 344px;
 }
 .index .content .first_module .left_module dt{
   height: 44px;
@@ -33,8 +33,8 @@
 }
 .index .content .first_module .left_module dd{
   border-bottom: 1px solid #747474;
-  height: 46px;
-  line-height: 46px;
+  height: 50px;
+  line-height: 50px;
   font-size: 14px;
 }
 .index .content .first_module .left_module dd:nth-child(7){
@@ -57,7 +57,7 @@
 }
 .index .content .first_module .right_module{
   float: left;
-  height: 322px;
+  height: 344px;
   border: 1px solid #747474;
   margin-left: 10px;
   width: 890px;
@@ -71,7 +71,7 @@
   font-size: 16px;
 }
 .index .content .first_module .right_module .module{
-  height: 276px;
+  height: 300px;
   overflow: scroll;
   padding: 0 2px;
 }
@@ -79,14 +79,16 @@
   padding: 4px 10px;
   border-bottom: 1px solid #bbbbbb;
   color: #8e8d8d;
+  height: 50px;
+  overflow: hidden;
 }
 .index .content .first_module .right_module .module li a{
   display: block;
 }
 
 .index .content .first_module .right_module .module li img{
-  width: 52px;
-  height: 52px;
+  width: 40px;
+  height: 40px;
   float: left;
   -webkit-box-shadow :1px 1px 5px #000;
   -ms-box-shadow :1px 1px 5px #000;
@@ -97,10 +99,8 @@
   float: left;
 }
 .index .content .first_module .right_module .module li div h4{
-  font-size: 16px;
+  font-size: 15px;
   color: #666666;
-  margin-top: 3px;
-  margin-bottom: 3px;
 }
 .index .content .first_module .right_module .module li div p span{
   display: inline-block;
