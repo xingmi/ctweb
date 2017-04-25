@@ -130,6 +130,14 @@
             </li>
             
           </ul>
+
+          <p class="nav_page_turn">
+            <span class="prev" @click="prevPage()">上一页</span>
+            <span>第<i>{{page}}</i>页</span>
+            <span class="next" @click="nextPage()">下一页</span>
+            <span>共<i>{{productlistDetail.totalPage}}</i>页</span>
+          </p>
+
         </div>
       </div>
       <div class="right_product">

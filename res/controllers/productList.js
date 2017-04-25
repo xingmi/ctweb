@@ -18,6 +18,7 @@ var productList = new Vue({
         temParams : {},
         productlist : [],
         active : false,
+        productlistDetail : {},
         tmpSearchParams : {
           peoples : [],
           assets : [],
@@ -134,10 +135,12 @@ var productList = new Vue({
       },
       selectKeyword : function(){
         this.temParams.keyword = this.searchTmpParams.keyword;
+        this.searchTmpParams.amount = this.temParams.amount = ''
         this.getNewData();
       },
       selectAmount : function(){
         this.temParams.amount = this.searchTmpParams.amount;
+        this.searchTmpParams.keyword = this.temParams.keyword = ''
         this.getNewData();
       },
 
@@ -145,6 +148,22 @@ var productList = new Vue({
         this.productlist = [];
         this.page = 1;
         this.getData();
+      },
+      nextPage : function(){
+        if(this.page < this.productlistDetail.totalPage){
+          this.page++;
+          this.productlist = [];
+          this.getData();
+          window.scrollTo(0,0)
+        }
+      },
+      prevPage : function(){
+        if(this.page > 1){
+          this.page--;
+          this.productlist = [];
+          this.getData();
+          window.scrollTo(0,0)
+        }
       }
     },
     events : {
