@@ -11,6 +11,8 @@ var Ajax = require('../config/ajax');
 var vueTmpFilter = require('./filter');
 var io = require('../lib/growingio')
 
+require('./directive');
+
 Vue.use(VueResource);
 
 // Vue.http.options.emulateHTTP = true;

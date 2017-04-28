@@ -23,6 +23,7 @@
               <label>
                 <span>内容主题：</span>
                 <input type="" name="">
+                <i class="prompt">必填</i>
               </label>
             </li>
             <li>
@@ -30,30 +31,37 @@
                 <span class="textarea">反馈内容：</span>
                 <textarea></textarea>
               </label>
+              <i class="prompt">必填</i>
             </li>
-            <li>
+            <li class="short_width">
               <label>
                 <span>联系人：</span>
                 <input type="" name="">
               </label>
+              <i class="prompt">必填</i>
             </li>
-            <li>
+            <li class="short_width">
               <label>
                 <span>手机：</span>
                 <input type="" name="">
               </label>
+              <i class="prompt">必填</i>
             </li>
-            <li>
+            <li class="short_width">
               <label>
                 <span>电子邮箱：</span>
                 <input type="" name="">
               </label>
             </li>
-            <li>
+            <li class="short_width">
               <label>
                 <span>单位：</span>
                 <input type="" name="">
               </label>
+            </li>
+            <li class="code">
+              <img :src="imageCode" @click="resetImageCode">
+              <input v-model="imageCodeValue" placeholder="图片验证码">
             </li>
           </ul>
           <span class="button">提交</span>

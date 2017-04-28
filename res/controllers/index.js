@@ -6,6 +6,7 @@ var ApplyModule = require('../components/applyModule.vue')
 var Config = require('../config/globalMain');
 var utility = require('../config/utility');
 var Toast = require('../widget/toast');
+
 var productList = new Vue({
     el : '.index',
     data : {
@@ -26,7 +27,22 @@ var productList = new Vue({
           }
         },function(){
 
-        }).bind(this)
+        }).bind(this);
+    },
+    mounted : function(){
+
+      window.onload = function(){
+        var unslider04 = $('.swiper').unslider({
+            dots: true
+        }),
+        data04 = unslider04.data('unslider');
+         
+        $('.unslider-arrow04').click(function() {
+            var fn = this.className.split(' ')[1];
+            data04[fn]();
+        });
+      }
+
     },
     watch : {
 

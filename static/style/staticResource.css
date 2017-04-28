@@ -105,6 +105,19 @@
   color: #416bff;
   font-weight: bold;
 }
+.join .content li h4 i{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: url('/static/images/staticResource/join_icon1.jpg') no-repeat;
+  margin-right: 5px;
+}
+.join .content li h4 i.current{
+
+  background: url('/static/images/staticResource/join_icon2.jpg') no-repeat;
+
+}
+
 .join .content li>div{
   margin-top: 10px;
   padding-left: 30px;
@@ -194,11 +207,24 @@
   width: 220px;
   padding: 0 5px;
 }
+.opinion .content li.short_width input{
+  width: 180px
+}
+.opinion .content li.code img{
+  width: 100px;
+  height: 30px;
+  display: block;
+  margin-bottom: 10px;
+}
 
 .opinion .content li textarea{
   height: 130px;
   width: 220px;
   padding: 5px;
+}
+.opinion .content li i{
+  color: red;
+  margin-left: 5px;
 }
 .opinion .content .button{
   background: #0090ec;

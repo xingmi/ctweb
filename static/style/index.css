@@ -155,6 +155,38 @@
   overflow: hidden;
   height: 335px;
 }
+.index .content .second_module .right_module .swiper{
+  position: relative;
+}
+.index .content .second_module .right_module .swiper ul li{
+  height: 286px;
+  overflow: hidden;
+  float: left;
+
+}
+.index .content .second_module .right_module .swiper .dots{
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+}
+.index .content .second_module .right_module .swiper .dots li{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  text-indent: -999em;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: .4;
+}
+.index .content .second_module .right_module .swiper .dots li.active{
+  opacity: 1;
+  background: #FFF;
+}
 .index .content .second_module .right_module a{
   display: block;
   width: 100%;
