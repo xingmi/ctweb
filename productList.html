@@ -73,7 +73,7 @@
       </div>
   </div>
   <div class="banner">
-    <img src="/static/images/productList/banner_word.png"/>
+    <img :src="bannerImage[0].image" v-if="bannerImage[0]">
   </div>
   <div class="search_params container">
       已选条件：
@@ -153,28 +153,12 @@
         </dl>
         <dl>
           <dt>贷款咨询顾问</dt>
-          <dd class="manager">
-            <img src="/static/images/productList/avator.jpg">
+          <dd class="manager" v-for="agent in agents">
+            <img :src="agent.image">
             <div>
-              <h4>王经理 137-6149-3927</h4>
-              <span>个人贷款专家</span>
-              <span>贷款额度：<i>32-320</i>万</span>
-            </div>
-          </dd>
-          <dd class="manager">
-            <img src="/static/images/productList/avator.jpg">
-            <div>
-              <h4>王经理 137-6149-3927</h4>
-              <span>个人贷款专家</span>
-              <span>贷款额度：<i>32-320</i>万</span>
-            </div>
-          </dd>
-          <dd class="manager">
-            <img src="/static/images/productList/avator.jpg">
-            <div>
-              <h4>王经理 137-6149-3927</h4>
-              <span>个人贷款专家</span>
-              <span>贷款额度：<i>32-320</i>万</span>
+              <h4>{{agent.name}} {{agent.mobile}}</h4>
+              <span>{{agent.excel}}</span>
+              <span>贷款额度：<i>{{agent.amount}}</i>万</span>
             </div>
           </dd>
         </dl>

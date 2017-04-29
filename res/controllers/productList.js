@@ -19,6 +19,7 @@ var productList = new Vue({
         productlist : [],
         active : false,
         productlistDetail : {},
+        agents : [],
         tmpSearchParams : {
           peoples : [],
           assets : [],
@@ -29,7 +30,8 @@ var productList = new Vue({
         searchTmpParams : {
           keyword : "",
           amount  : ""
-        }
+        },
+        bannerImage : []
     },
     components: {
       'top-header': Header,
@@ -51,6 +53,24 @@ var productList = new Vue({
       that.temParams = temParams;
 
       that.getData();
+
+      this.$http.get(Config.api + "home")
+        .then(function(res){
+          if(res.body.code == 0){
+            this.agents = res.body.data.agents
+          }
+        },function(){
+
+        }).bind(this);
+
+      this.$http.get(Config.api + "banners?type=3")
+        .then(function(res){
+        if(res.body.code == 0){
+          this.bannerImage = res.body.data
+        }
+      },function(){
+
+      }).bind(this);
 
     },
     watch : {

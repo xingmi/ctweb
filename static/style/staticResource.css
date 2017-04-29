@@ -42,6 +42,7 @@
   float: left;
   padding: 30px 60px;
   border: 1px solid #bdbdbd;
+  min-height: 1000px;
 }
 .static_resource .right_content h2{
   font-size: 20px;

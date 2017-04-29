@@ -87,11 +87,11 @@
 .product_list .banner{
   width: 100%;
   height: 150px;
-  background: url('/static/images/productList/banner.jpg') no-repeat;
+  overflow: hidden;
   text-align: center;
 }
 .product_list .banner img{
-  margin-top: 20px;
+  // margin-top: 20px;
 }
 .product_list .search_params{
   height: 36px;
@@ -290,6 +290,8 @@
 .product_search .right_product dl .manager img{
   float: left;
   margin-right: 20px;
+  width: 80px;
+  height: 77px;
 }
 .product_search .right_product dl .manager div{
   float: left;

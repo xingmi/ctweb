@@ -13,7 +13,7 @@
       <home-header showsearch="true" currentindex="1"></home-header>
   </div>
   <div class="banner">
-    <img src="http://sh.linux.tedu.cn/xzt/python/images/banner.jpg">
+    <img :src="bannerImage[0].image" v-if="bannerImage[0]">
     <apply-module title="30秒贷款免费申请" button="提交"></apply-module>
   </div>
   <div class="content container">
@@ -101,9 +101,21 @@
       <div class="container" style="margin:10px 0;">
         <img src="/static/images/index/banner04.jpg" style="width: 100%">
       </div>
-      <div class="third_module">
-        <video src="http://player.youku.com/player.php/sid/XMjcwODQyMDkxNg==/v.swf" controls="controls"></video>
-        <video></video>
+      <div class="third_module clearfix">
+        <video width="600" height="260" controls preload>
+            <source src="/static/1.mp4" type="video/mp4">
+  <!--           <source src="movie.ogg" type="video/ogg"> -->
+            您的浏览器不支持 video 标签。
+        </video>
+        <video width="370" height="260" controls preload>
+            <source src="/static/2.mp4" type="video/mp4">
+  <!--           <source src="movie.ogg" type="video/ogg"> -->
+            您的浏览器不支持 video 标签。
+        </video>
+        <div>
+            <img src="/static/images/common/qr_code.jpg">
+            <p>微信扫一扫</p>
+        </div>
       </div>
       <div class="four_module clearfix">
         <div class="left_module news">

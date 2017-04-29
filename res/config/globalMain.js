@@ -10,6 +10,7 @@ var env    = require('./env');
 var Ajax = require('../config/ajax');
 var vueTmpFilter = require('./filter');
 var io = require('../lib/growingio')
+var id = ''
 
 require('./directive');
 
@@ -40,8 +41,14 @@ Vue.http.interceptors.push(function(request, next) {
   }
 });
 
+if(sessionStorage['openid']){
+  id = sessionStorage['openid']
+}else{
+  id = Math.random().toString(36).substr(2);
+  sessionStorage['openid'] = id
+}
+
 module.exports = {
     api : env.api,
-    // mapData : JSON.parse(localStorage['mapData']),
-    // currentCity : JSON.parse(localStorage['mapData']).current
+    openId : id
 }

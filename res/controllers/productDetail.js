@@ -22,7 +22,8 @@ new Vue({
         },
         // widthCalculateInterest : 0,
         // widthCalculateFee : 0,
-        term : []
+        term : [],
+        bannerImage : []
     },
     components: {
       'top-header': Header,
@@ -43,6 +44,15 @@ new Vue({
         },function(){
 
         }).bind(this);
+
+        this.$http.get(Config.api + "banners?type=2")
+            .then(function(res){
+            if(res.body.code == 0){
+              this.bannerImage = res.body.data
+            }
+          },function(){
+
+          }).bind(this);
     },
     watch : {
         term : function(value){

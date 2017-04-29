@@ -12,7 +12,7 @@
   <top-header></top-header>
   <div class="product_detail">
     <div class="banner">
-        <img src="/static/images/productDetail/product_detail_banner.jpg" />
+         <img :src="bannerImage[0].image" v-if="bannerImage[0]">
         <apply-module title="贷款免费申请" showamount="true" button="快速申请"></apply-module>
     </div>
     <div class="content container clearfix">

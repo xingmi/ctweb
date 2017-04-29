@@ -11,7 +11,8 @@ var productList = new Vue({
     el : '.index',
     data : {
       homeDetail : {
-      }
+      },
+      bannerImage : []
     },
     components: {
       'top-header': Header,
@@ -28,6 +29,15 @@ var productList = new Vue({
         },function(){
 
         }).bind(this);
+
+      this.$http.get(Config.api + "banners?type=1")
+        .then(function(res){
+        if(res.body.code == 0){
+          this.bannerImage = res.body.data
+        }
+      },function(){
+
+      }).bind(this);
     },
     mounted : function(){
 

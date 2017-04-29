@@ -60,7 +60,7 @@
   height: 344px;
   border: 1px solid #747474;
   margin-left: 10px;
-  width: 890px;
+  width: 930px;
   overflow: hidden;
 }
 .index .content .first_module .right_module h3{
@@ -105,7 +105,7 @@
 .index .content .first_module .right_module .module li div p span{
   display: inline-block;
   font-size: 14px;
-  width: 170px;
+  width: 180px;
 }
 .index .content .first_module .right_module .module li div p span:nth-child(2) i{
   color: #f51741;
@@ -117,7 +117,7 @@
 }
 
 .index .content .second_module .left_module{
-  width: 950px;
+  width: 970px;
   float: left;
   overflow: hidden;
 }
@@ -140,7 +140,7 @@
   display: block;
   float: left;
   height: 140px;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 .index .content .second_module .left_module .recommend a:last-child{
   margin-right: 0;
@@ -196,7 +196,35 @@
   width: 100%;
   height: 100%;
 }
+.index .content .third_module{
+  height: 260px;
+  overflow: hidden;
+}
+.index .content .third_module video{
+  padding: 0;
+  margin: 0;
+  background: #000;
+  float: left;
+}
+.index .content .third_module video:first-child{
+  margin-right: 10px;
+}
 
+.index .content .third_module div{
+  width: 240px;
+  float: left;
+  height: 100%;
+  text-align: center;
+}
+.index .content .third_module div img{
+  margin-top: 40px;
+  width: 140px;
+}
+.index .content .third_module div p{
+  font-size: 16px;
+  margin-top: 10px;
+  color: #666666;
+}
 .index .content .four_module{
   margin-top: 25px;
 }
