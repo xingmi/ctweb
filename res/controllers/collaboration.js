@@ -11,7 +11,8 @@ new Vue({
       page : 1,
       size : 12,
       type : 2,
-      newsList : {}
+      newsList : {},
+      bannerImage : []
     },
     components: {
       'top-header': Header,
@@ -21,6 +22,15 @@ new Vue({
     },
     created : function(){
       this.getData()
+
+      this.$http.get(Config.api + "banners?type=4")
+        .then(function(res){
+        if(res.body.code == 0){
+          this.bannerImage = res.body.data
+        }
+      },function(){
+
+      }).bind(this);
     },
     methods : {
       getData : function(){

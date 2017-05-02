@@ -133,7 +133,8 @@
 }
 .index .content .second_module .left_module .shortcut li img{
   display: block;
-  margin: 0 auto;
+  margin: 5px auto;
+
 }
 .index .content .second_module .left_module .recommend a{
   width: 220px;
@@ -153,13 +154,13 @@
   float: left;
   width: 250px;
   overflow: hidden;
-  height: 335px;
+  height: 393px;
 }
 .index .content .second_module .right_module .swiper{
   position: relative;
 }
 .index .content .second_module .right_module .swiper ul li{
-  height: 286px;
+  height: 342px;
   overflow: hidden;
   float: left;
 

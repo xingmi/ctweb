@@ -11,7 +11,7 @@
   <top-header></top-header>
   <home-header currentindex="6"></home-header>
   <div class="banner">
-      <img src="/static/images/productDetail/product_detail_banner.jpg" />
+      <img :src="bannerImage[0].image" v-if="bannerImage[0]">
       <apply-module title="快速加盟通道" showamount="false" button="我要加盟"></apply-module>
   </div>
   <div class="container team_list clearfix">
