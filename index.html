@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
   <title>首页</title>
-  <link rel="stylesheet" type="text/css" href="/static/style/main.css">
-  <link rel="stylesheet" type="text/css" href="/static/style/index.css">
+  <link rel="stylesheet" type="text/css" href="/static/style/main.css?v=1000">
+  <link rel="stylesheet" type="text/css" href="/static/style/index.css?v=1000">
 </head>
 <body>
 <div class="index" v-cloak>
@@ -23,7 +23,7 @@
             <dl>
               <dt>全国热销产品</dt>
               <dd v-for="n in 6">
-                <a href="" v-if="homeDetail.icons && homeDetail.icons.rmcp.icons && homeDetail.icons.rmcp.icons[n-1]">
+                <a :href="homeDetail.icons.rmcp.icons[n-1].url" v-if="homeDetail.icons && homeDetail.icons.rmcp.icons && homeDetail.icons.rmcp.icons[n-1]">
                 {{homeDetail.icons.rmcp.icons[n-1] && homeDetail.icons.rmcp.icons[n-1].name}}
                 </a>
               </dd>
@@ -164,6 +164,6 @@
 </div>
 <script type="text/javascript"  src="/res/lib/jquery-1.11.1.min.js"></script>
 <script type="text/javascript"  src="/res/lib/unslider.min.js"></script>
-<script type="text/javascript"  src="/dist/index.js"></script>
+<script type="text/javascript"  src="/dist/index.js?v=1000"></script>
 </body>
 </html>
