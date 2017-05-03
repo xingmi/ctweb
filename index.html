@@ -20,14 +20,16 @@
       <h2>贷款</h2>
       <div class="first_module clearfix">
         <div class="left_module">
-            <dl>
-              <dt>全国热销产品</dt>
-              <dd v-for="n in 6">
-                <a :href="homeDetail.icons.rmcp.icons[n-1].url" v-if="homeDetail.icons && homeDetail.icons.rmcp.icons && homeDetail.icons.rmcp.icons[n-1]">
-                {{homeDetail.icons.rmcp.icons[n-1] && homeDetail.icons.rmcp.icons[n-1].name}}
-                </a>
-              </dd>
-            </dl>
+            <h3>全国热销产品</h3>
+            <div class="module">
+              <dl v-if="homeDetail && homeDetail.icons">
+                <dd v-for="icons in homeDetail.icons.rmcp.icons">
+                  <a :href="icons.url" >
+                  {{icons && icons.name}}
+                  </a>
+                </dd>
+              </dl>
+            </div>
         </div>
         <div class="right_module">
           <h3>城市热销产品</h3>
@@ -35,7 +37,7 @@
             <ul>
               <li class="clearfix" v-for="product in homeDetail.products">
               <a :href="'/productDetail.html?id='+product.id">
-                <img src="/static/images/index/icon1.jpg">
+                <img :src="product.logo">
                 <div>
                   <h4>{{product.name}}</h4>
                   <p>

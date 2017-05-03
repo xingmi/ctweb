@@ -204,7 +204,7 @@ module.exports = {
 }
 .dialog .dialog_container{
   position: fixed;
-  width: 700px;
+  width: 500px;
   left: 50%;
 }
 .dialog .dialog_container .dialog_content{
@@ -246,7 +246,7 @@ module.exports = {
 .apply_form .apply_btn{
     display: block;
     margin: 20px auto 0 auto;
-    width: 520px;
+    width: 320px;
     height: 50px;
     line-height: 50px;
     font-size: 16px;
