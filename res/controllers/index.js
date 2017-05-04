@@ -12,7 +12,12 @@ var productList = new Vue({
     data : {
       homeDetail : {
       },
-      bannerImage : []
+      bannerImage : [],
+      apply : {
+        phone : "",
+        image : ""
+      },
+      imageCode : "",
     },
     components: {
       'top-header': Header,
@@ -21,6 +26,8 @@ var productList = new Vue({
       'apply-module' : ApplyModule
     },
     created : function(){
+      this.imageCode = "http://api.toudaiworld.com/message/validate.jpg?openid=" + Config.openId
+
       this.$http.get(Config.api + "home")
         .then(function(res){
           if(res.body.code == 0){
@@ -58,7 +65,12 @@ var productList = new Vue({
 
     },
     methods : {
-     
+     resetImageCode : function(){
+          this.imageCode = "http://api.toudaiworld.com/message/validate.jpg?openid="+Config.openId+"&data=" + new Date().getTime()
+      },
+      applyNow : function(){
+        alert('功能开发中...')
+      }
       
     }
 

@@ -97,8 +97,12 @@
                         <div class="analog_input">{{params.credit | creditRegistriesValue}}</div>
                     </dd>
                     <dt>9. 联系方式<i>*</i></dt>
-                    <dd class="clearfix">
+                    <dd class="clearfix user_phone">
                          <input type="number" placeholder="请输入手机号码" v-model="params.mobile" />
+                         <div class="content">
+                           <span :class="sendStatus" @click="sendCode" v-cloak >{{codeMsg}}</span>
+                           <input v-model="params.code" placeholder="请输入手机验证码">
+                         </div>
                     </dd>
                 </dl>
             </div>
@@ -127,13 +131,18 @@ module.exports = {
             monthly : '',
             credit : '',
             expected : '',
-            mobile : ''
+            mobile : '',
+            code : ''
         },
         configParams : {} ,
         temCredit_registries : [],
         temExpected : [],
         showdialog : false,
-        temTrade : []
+        temTrade : [],
+        codeMsg: "获取验证码",
+        countdown : 60,
+        sendStatus : "title",
+        isSend : true
     }
   },
   watch : {
@@ -187,6 +196,52 @@ module.exports = {
       },
       closeDialog : function(){
         this.resetShowDialog()
+      },
+      sendCode : function(){
+        if(!this.params.mobile){
+            alert('请填写手机号码');
+            return;
+        }
+
+        var self = this;
+        function settime() {
+            if (self.countdown == 0) {    
+                self.codeMsg = "发送验证码";
+                self.countdown = 60;
+                self.isSend = true; 
+                return;
+            } else {
+                self.sendStatus = "title disable"
+                self.codeMsg = "重发(" + self.countdown + "s)";
+                self.countdown--;
+            } 
+            setTimeout(function() { settime() },1000) //每1000毫秒执行一次
+        } 
+
+        if(!self.isSend){
+            return true;
+        }
+
+        this.$http.post(Config.api + 'message/sms',{
+            openid : Config.openId,
+            mobile : self.params.mobile
+        },{
+            before : function(){
+                self.isSend = false;
+            }
+        }).then(function(res){
+            if(res.body.code == 0){
+                settime();
+                alert('验证码正飞往您的手机')
+            }else{
+                self.isSend = true; 
+                alert(res.body.message);
+            }
+        },function(){
+            self.isSend = true; 
+            alert('发送失败');
+        })
+
       }
   }
 }  
@@ -376,6 +431,32 @@ module.exports = {
 }
 .apply_form .apply dd .yesorno_model div:last-child{
     border-top: 0;
+}
+
+.apply_form .apply dd.user_phone>input{
+  width: 160px;
+  float: left;
+}
+.apply_form .apply dd.user_phone .content{
+  float: right;
+  width: 230px;
+  height: 30px;
+  border: 1px solid #aaaaaa;
+  margin: 4px 0;
+}
+.apply_form .apply dd.user_phone .content .title{
+  width: 110px;
+  text-align: center;
+  line-height: 28px;
+  color: #FFF;
+  background: #ee775f;
+  display: inline-block;
+}
+.apply_form .apply dd.user_phone .content .title.disable{
+  background: #c4c4c4;
+}
+.apply_form .apply dd.user_phone .content input{
+  width: 100px;
 }
 
 .apply_form .select_option{

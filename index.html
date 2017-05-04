@@ -58,8 +58,14 @@
           <div class="left_module">
             <h2>快捷服务</h2>
             <ul class="shortcut clearfix">
-              <li>
-                <a href=""><img src="/static/images/index/icon1.jpg">小额贷款</a>
+              <li class="float_toast">
+                <a href="javascript:void(0)"><img src="/static/images/index/icon1.jpg">小额贷款</a>
+                <div class="">
+                    <input  v-model="apply.phone" placeholder="请输入手机号">
+                    <input  v-model="apply.image" placeholder="请输入验证码" class="apply_code">
+                    <img :src="imageCode" @click="resetImageCode">
+                    <button @click="applyNow">立即申请</button>
+                </div>
               </li>
               <li>
                 <a href=""><img src="/static/images/index/icon2.jpg">信用卡申请</a>
