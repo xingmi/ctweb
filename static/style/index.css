@@ -21,7 +21,7 @@
   float: left;
   border: 1px solid #747474;
   width: 280px;
-  height: 344px;
+  height: 372px;
 }
 .index .content .first_module .left_module h3{
   height: 44px;
@@ -32,13 +32,13 @@
   border-bottom: 1px solid #747474;
 }
 .index .content .first_module .left_module .module{
-  height: 300px;
+  height: 327px;
   overflow: scroll;
 }
 .index .content .first_module .left_module dd{
   border-bottom: 1px solid #747474;
-  height: 50px;
-  line-height: 50px;
+  height: 59px;
+  line-height: 59px;
   font-size: 14px;
 }
 .index .content .first_module .left_module dd:nth-child(7){
@@ -64,7 +64,7 @@
   width: 18px;
   height: 17px;
   content: "";
-  top: 16px;
+  top: 22px;
   left: 21px;
   background: url('/static/images/index/house_icon.png');
 }
@@ -79,7 +79,7 @@
 
 .index .content .first_module .right_module{
   float: left;
-  height: 344px;
+  height: 372px;
   border: 1px solid #747474;
   margin-left: 10px;
   width: 930px;
@@ -93,7 +93,7 @@
   font-size: 16px;
 }
 .index .content .first_module .right_module .module{
-  height: 300px;
+  height: 327px;
   overflow: scroll;
   padding: 0 2px;
 }
@@ -101,7 +101,6 @@
   padding: 4px 10px;
   border-bottom: 1px solid #bbbbbb;
   color: #8e8d8d;
-  height: 50px;
   overflow: hidden;
 }
 .index .content .first_module .right_module .module li a{
@@ -109,8 +108,8 @@
 }
 
 .index .content .first_module .right_module .module li img{
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   float: left;
   -webkit-box-shadow :1px 1px 5px #000;
   -ms-box-shadow :1px 1px 5px #000;

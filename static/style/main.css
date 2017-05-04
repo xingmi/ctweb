@@ -161,6 +161,13 @@ body {
   
 }
 
+.apply_container.white_style .apply_model label .title{
+  color: #FFF;
+}
+.apply_container.white_style .apply_model p{
+  color: #FFF;
+}
+
 
 .apply_model h3{
   font-size: 18px;

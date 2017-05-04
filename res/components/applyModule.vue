@@ -1,5 +1,5 @@
 <template>
-  <div class="container apply_container">
+  <div :class="white == 'true' ? 'container apply_container white_style' : 'container apply_container'">
       <div :class="showamount == 'true' ? 'apply_model fullItem' : 'apply_model'">
           <div v-if="!applySuccess">
             <h3>{{title}}</h3>
@@ -47,7 +47,7 @@ var Config = require('../config/globalMain');
 var Toast = require('../widget/toast');
 
   module.exports = {
-    props : ['title','showamount','button'],
+    props : ['title','showamount','button','white'],
     data : function(){
         return {
           isSend : true,
