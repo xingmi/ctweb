@@ -34,6 +34,7 @@
 .index .content .first_module .left_module .module{
   height: 327px;
   overflow: scroll;
+  overflow-x:  hidden;
 }
 .index .content .first_module .left_module dd{
   border-bottom: 1px solid #747474;
@@ -96,6 +97,7 @@
   height: 327px;
   overflow: scroll;
   padding: 0 2px;
+  overflow-x:  hidden;
 }
 .index .content .first_module .right_module .module li {
   padding: 4px 10px;
