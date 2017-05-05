@@ -21,7 +21,7 @@ Vue.http.options.emulateJSON = true;
 
 Vue.http.interceptors.push(function(request, next) {
   if(!sessionStorage['mapData']){
-    Ajax.get(env.api+'constants.json?lat='+31.78+ "&lng="+119.95,function(datas){
+    Ajax.get(env.api+'constants.json',function(datas){
         var datas = JSON.parse(datas);
         if(datas.code == 0){
           sessionStorage['mapData'] = JSON.stringify(datas.data)
@@ -50,5 +50,5 @@ if(sessionStorage['openid']){
 
 module.exports = {
     api : env.api,
-    openId : id
+    openId : id,
 }
