@@ -272,6 +272,10 @@
   text-align: center;
   margin-right: 10px;
 }
+.strategy .content li img{
+  width: 255px;
+  height: 175px;
+}
 .strategy .content .prompt{
   margin-top: 20px;
 }

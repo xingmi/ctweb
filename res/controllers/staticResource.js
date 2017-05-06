@@ -56,7 +56,7 @@ new Vue({
         this.$http.post(Config.api + "feedback/submit",this.user)
           .then(function(res){
           if(res.body.code == 0){
-            alert('提交成功')
+            alert('提交成功');
           }else{
             alert('验证码错误')
           }

@@ -106,7 +106,7 @@
                     </dd>
                 </dl>
             </div>
-            <span class="apply_btn" @click="applyBtn()">高效申请</span>
+            <span class="apply_btn" @click="applyBtn()">提交申请</span>
           </div>
       </div>
     </div>
@@ -120,17 +120,16 @@ module.exports = {
   data : function(){
     return {
         params : {
-            name : '',
-            amount : '',
-            usage : '',
-            assets : [],
-            identity : '',
-            salary : '',
-            social : '',
-            accu : '',
-            monthly : '',
-            credit : '',
-            expected : '',
+            name : '', // 称呼
+            trade : '', // 行业
+            quota : '', //融资额度
+            invoice : '', // 企业年开票额
+            liabilities : '', // 企业及个人名下负债
+            credit : '', //信用情况
+            house : '', // 房产
+            car : '', // 汽车
+            device : '', // 设备
+            receivables : '', //企业应收账款额
             mobile : '',
             code : ''
         },
@@ -149,8 +148,8 @@ module.exports = {
       temCredit_registries : function(value){
           this.params.credit = value;
       },
-      temExpected : function(value){
-          this.params.expected = value;
+      temTrade : function(value){
+          this.params.trade = value;
       }
   },
   created : function(){
@@ -173,8 +172,8 @@ module.exports = {
       },
       applyBtn : function(){
           var postData = JSON.parse(JSON.stringify(this.params));
-          postData.assets = eval(this.params.assets.join('+'));
-          postData.openid = 'test';
+          // postData.assets = eval(this.params.assets.join('+'));
+          postData.openid = Config.openId;
           for(key in postData){
 
               if(!postData[key] || postData[key]  == undefined ){

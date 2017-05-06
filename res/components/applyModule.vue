@@ -45,7 +45,7 @@
 <script>
 var Config = require('../config/globalMain');
 var Toast = require('../widget/toast');
-console.log(Toast)
+var utility = require('../config/utility');
 
   module.exports = {
     props : ['title','showamount','button','white'],
@@ -76,13 +76,25 @@ console.log(Toast)
                 return;
             }
             var self = this;
-            self.$http.post(Config.api+ 'quick/personal',{
-                    'openid' : Config.openId,
-                    'mobile' : self.user.phone,
-                    'code'   : self.user.code,
-                    'name'   : self.user.name,
-                    'amount' : self.user.amount || 10000
-                }).then(function(res){
+            var params = {
+                'openid' : Config.openId,
+                'mobile' : self.user.phone,
+                'code'   : self.user.code,
+                'name'   : self.user.name,
+                'amount' : self.user.amount || 10000
+            }
+
+            if(window.location.href.indexOf('productDetail') > 0){
+              _.extend(params,{
+                pid : utility.getUrlParam('id')
+              })
+            }else if(window.location.href.indexOf('collaboration') > 0){
+              _.extend(params,{
+                type : 2
+              })
+            }
+
+            self.$http.post(Config.api+ 'quick/personal',params).then(function(res){
                     if(res.body.code == 0){
                         this.applySuccess = true
                     }else{

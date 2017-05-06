@@ -105,7 +105,7 @@
                     </dd>
                 </dl>
             </div>
-            <span class="apply_btn" @click="applyBtn()">高效申请</span>
+            <span class="apply_btn" @click="applyBtn()">提交申请</span>
           </div>
       </div>
     </div>
@@ -172,7 +172,7 @@ module.exports = {
       applyBtn : function(){
           var postData = JSON.parse(JSON.stringify(this.params));
           postData.assets = eval(this.params.assets.join('+'));
-          postData.openid = 'test';
+          postData.openid = Config.openId;
           for(key in postData){
 
               if(!postData[key] || postData[key]  == undefined ){
