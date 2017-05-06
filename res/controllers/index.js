@@ -18,6 +18,7 @@ var productList = new Vue({
         image : ""
       },
       imageCode : "",
+      centerImage : []
     },
     components: {
       'top-header': Header,
@@ -38,10 +39,21 @@ var productList = new Vue({
 
         }).bind(this);
 
+      // 顶部banner
       this.$http.get(Config.api + "banners?type=1")
         .then(function(res){
         if(res.body.code == 0){
           this.bannerImage = res.body.data
+        }
+      },function(){
+
+      }).bind(this);
+
+      // 中间banner
+      this.$http.get(Config.api + "banners?type=6")
+        .then(function(res){
+        if(res.body.code == 0){
+          this.centerImage = res.body.data
         }
       },function(){
 
@@ -70,7 +82,10 @@ var productList = new Vue({
         this.imageCode = "http://api.toudaiworld.com/message/validate.jpg?openid="+Config.openId+"&data=" + new Date().getTime()
       },
       applyNow : function(){
-        this.$http.get(Config.api + "quick/apply?mobile=" + this.apply.phone + "&code=" + this.apply.image)
+        this.$http.get(Config.api + "quick/apply",{
+          mobile : this.apply.phone,
+          code   : this.apply.image
+        })
         .then(function(res){
           if(res.body.code == 0){
             alert('申请成功')

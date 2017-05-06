@@ -50,7 +50,7 @@
   display: block;
   height: 100%;
   padding-right: 50px;
-  background-image: url('/static/images/index/arrow_icon.png');
+  // background-image: url('/static/images/index/arrow_icon.png');
   background-repeat: no-repeat;
   background-position: 230px center;
   color: #3c74e3;
@@ -71,7 +71,7 @@
 }
 .index .content .first_module .left_module dd a:hover{
   background-color: #d63846;
-  background-image: url('/static/images/index/arrow_icon_hover.png');
+  // background-image: url('/static/images/index/arrow_icon_hover.png');
   color:#FFF;
 }
 .index .content .first_module .left_module dd a:hover::after{
@@ -125,10 +125,24 @@
   font-size: 15px;
   color: #666666;
 }
+.index .content .first_module .right_module .module li div h4 i{
+  background: #e95161;
+  border-radius: 50px;
+  font-size: 10px;
+  padding: 2px 4px;
+  color: #FFF;
+  vertical-align: top;
+  margin-top: 1px;
+  display: inline-block;
+  margin-left: 5px;
+}
 .index .content .first_module .right_module .module li div p span{
   display: inline-block;
   font-size: 14px;
   width: 200px;
+}
+.index .content .first_module .right_module .module li div p span.short_width{
+  width: 150px;
 }
 .index .content .first_module .right_module .module li div p span:nth-child(2) i{
   color: #f51741;
@@ -152,11 +166,11 @@
   position: relative;
   font-size: 14px;
 }
-.index .content .second_module .left_module .shortcut li.float_toast:hover div{
+.index .content .second_module .left_module .shortcut li:first-child:hover div{
   display: block;
 }
 
-.index .content .second_module .left_module .shortcut li.float_toast div{
+.index .content .second_module .left_module .shortcut li:first-child div{
   position: absolute;
   top: 0;
   right: -220px;
@@ -167,7 +181,7 @@
   padding : 10px;
   display: none
 }
-.index .content .second_module .left_module .shortcut li.float_toast div input{
+.index .content .second_module .left_module .shortcut li:first-child div input{
   border: 1px solid #000;
   height: 30px;
   line-height: 30px;
@@ -177,17 +191,17 @@
   margin-bottom: 6px;
   background: #f3f3f3;
 }
-.index .content .second_module .left_module .shortcut li.float_toast div input.apply_code{
+.index .content .second_module .left_module .shortcut li:first-child div input.apply_code{
   width: 120px;
   float: left;
 }
-.index .content .second_module .left_module .shortcut li.float_toast div img{
+.index .content .second_module .left_module .shortcut li:first-child div img{
   width: 80px;
   margin: 0;
   float: left;
   height: 30px;
 }
-.index .content .second_module .left_module .shortcut li.float_toast div button{
+.index .content .second_module .left_module .shortcut li:first-child div button{
   background: #ff5a00;
   color: #FFF;
   text-align: center;
@@ -205,6 +219,8 @@
 .index .content .second_module .left_module .shortcut li img{
   display: block;
   margin: 5px auto;
+  width: 93px;
+  height: 77px;
 
 }
 .index .content .second_module .left_module .recommend a{
@@ -308,6 +324,8 @@
 .index .content .four_module .news>a>img{
   float: left;
   margin-right: 20px;
+  width: 188px;
+  height: 394px;
 }
 .index .content .four_module .news .cont{
   float: left;
@@ -318,6 +336,7 @@
   overflow: hidden;
   text-overflow:ellipsis;
   white-space: nowrap;
+  font-size: 14px;
 }
 .index .content .four_module .news li:hover a{
  text-decoration: underline;

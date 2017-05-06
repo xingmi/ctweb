@@ -153,17 +153,19 @@ var productList = new Vue({
         this.temParams.institutions = this.tmpSearchParams.institutions[0];
         this.getNewData();
       },
-      selectKeyword : function(){
-        this.temParams.keyword = this.searchTmpParams.keyword;
-        this.searchTmpParams.amount = this.temParams.amount = ''
+      searchBtn : function(){
+        this.temParams.amount = this.searchTmpParams.amount
+        this.temParams.keyword = this.searchTmpParams.keyword 
         this.getNewData();
       },
-      selectAmount : function(){
-        this.temParams.amount = this.searchTmpParams.amount;
+      clearKeyword : function(){
         this.searchTmpParams.keyword = this.temParams.keyword = ''
         this.getNewData();
       },
-
+      clearAmount : function(){
+        this.searchTmpParams.amount = this.temParams.amount = ''
+        this.getNewData();
+      },
       getNewData : function(){
         this.productlist = [];
         this.page = 1;

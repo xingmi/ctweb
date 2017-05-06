@@ -12,7 +12,7 @@
             <li :class="{current: (currentindex == 6)}"><a href="/collaboration.html">加&nbsp;&nbsp;盟</a></li>
           </ul>
           <div class="search_input" v-if="showsearchItem">
-            <input type="" name="" v-model="keyword">
+            <input type="" name="" v-model="keyword" placeholder="搜索一下, 快速找到">
             <i @click="searchKeyword()"></i>
           </div>
         </div>
@@ -80,6 +80,8 @@ var CityChange = require('./citySelect.vue');
   letter-spacing: 2px;
   margin: 0 15px;
   border-radius: 4px;
+  width: 82px;
+  text-align: center;
 }
 .home_header .home_header_nav li:hover,
 .home_header .home_header_nav li.current{
@@ -91,12 +93,12 @@ var CityChange = require('./citySelect.vue');
   border: 1px solid #939393;
   display: inline-block;
   height: 24px;
-  width: 220px;
+  width: 180px;
   margin-top:35px;
   position:relative;
 }
 .home_header .search_input input{
-  width: 210px;
+  width: 155px;
   height: 100%;
   padding-left: 10px;
 }

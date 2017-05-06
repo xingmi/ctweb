@@ -21,6 +21,7 @@
 .static_resource .left_content .nav>li .first_nav:hover ,
 .static_resource .left_content .nav>li.current .first_nav {
   background: #748997;
+  font-size: 16px;
 } 
 .static_resource .left_content .nav>li .jolin_lia{
   padding-left: 38px;
@@ -32,7 +33,8 @@
 .static_resource .left_content .nav>li .jolin_lia li a{
   display: block;
   height: 100%;
-    padding-left: 60px;
+  padding-left: 60px;
+  font-size: 14px;
 }
 .static_resource .left_content .nav>li .jolin_lia li:last-child{
   border-bottom: 0;
