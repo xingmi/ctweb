@@ -219,6 +219,7 @@ body {
   margin: 0 auto;
   display: block;
   border-radius: 4px;
+  cursor: pointer;
 }
 .apply_model p{
   margin: 5px 0;
@@ -241,6 +242,7 @@ body {
   color: #FFF;
   border-radius: 2px;
   text-align: center;
+  cursor: pointer;
 }
 .apply_model label.send_code .title.disable{
   background: #c4c4c4;

@@ -105,6 +105,7 @@
   display: block;
   margin-bottom: 12px;
   color: #000;
+  position: relative;
 }
 .product_detail .content .right_content .main_module .detail_module .input_module div .input {
   display: inline-block;
@@ -122,6 +123,17 @@
   display: inline-block;
   line-height: 26px;
 }
+
+.product_detail .content .right_content .main_module .detail_module .input_module div label input{
+  padding-right: 27px;
+}
+
+.product_detail .content .right_content .main_module .detail_module .input_module div label i{
+  position: absolute;
+  right: 80px;
+  top: 1px;
+}
+
 .product_detail .content .right_content .main_module .detail_module .input_module div label div{
   position: relative;
 }
