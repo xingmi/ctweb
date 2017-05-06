@@ -15,7 +15,8 @@ new Vue({
     },
     data : {
       user : {
-        code : ""
+        code : "",
+        openid : Config.openId
       },
       imageCode : ""
     },

@@ -82,13 +82,16 @@ var productList = new Vue({
         this.imageCode = "http://api.toudaiworld.com/message/validate.jpg?openid="+Config.openId+"&data=" + new Date().getTime()
       },
       applyNow : function(){
-        this.$http.get(Config.api + "quick/apply",{
+        this.$http.post(Config.api + "quick/apply",{
           mobile : this.apply.phone,
-          code   : this.apply.image
+          code   : this.apply.image,
+          openid : Config.openId
         })
         .then(function(res){
           if(res.body.code == 0){
             alert('申请成功')
+          }else{
+            alert('验证码错误')
           }
         },function(){
           alert('申请失败')

@@ -3,10 +3,10 @@
       <img src="../../static/images/common/bottom_banner.jpg">
       <div class=footer_nav>
         <ul>
-          <li><a href="/aboutUs.html">关于长天金融超市</a></li>
+          <li><a href="/aboutUs.html">关于长天金融</a></li>
           <li><a href="/contactUs.html">联系我们</a></li>
           <li><a href="/joinUs.html">加入我们</a></li>
-          <li><a href="/declaration.html">面责声明</a></li>
+          <li><a href="/declaration.html">免责声明</a></li>
           <li><a href="/opinion.html">建议与投诉</a></li>
           <li><a href="/aboutUs.html">了解更多</a></li>
         </ul>
