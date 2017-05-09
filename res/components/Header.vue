@@ -12,7 +12,7 @@
 
 
 <script>
-  module.exports = {
+  export default {
     props : ['hidelogo']
   }
 
@@ -41,8 +41,7 @@
   float: left;
   height: 44px;
   line-height: 44px;
-
-  padding:0  10px;
+  padding:0 10px;
   position: relative;
 }
 .header .container .header_nav li:after{

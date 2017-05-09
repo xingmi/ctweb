@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+// var vue = require('vue-loader'),
 
 module.exports = {
   entry: {
@@ -41,8 +42,12 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue': 'vue/dist/vue.js'
+      'vue'    : 'vue/dist/vue.js',
+      'jquery' : path.join(__dirname,'./res/lib/jquery-1.11.1.min.js')
     }
+  },
+  externals: {
+    $ : 'jQuery'
   },
   devServer: {
     historyApiFallback: true,

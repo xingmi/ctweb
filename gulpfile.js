@@ -1,29 +1,35 @@
 var gulp = require('gulp');
-// var cheerio  = require('gulp-cheerio');
 var getTime = new Date().getTime();
 var replace = require('gulp-replace');
-var gulpWebpack = require('webpack-stream');
-// var config = require('./webpack.config');
-const shell = require('gulp-shell')
+var webpack = require('webpack');
+var config = require('./webpack.config');
+var htmlmin = require('gulp-htmlmin');
+var autoprefixer = require('gulp-autoprefixer');
 
-gulp.task('default',['moveJs'], function() {
+var staticResourcePath = "./dist/static"
+
+gulp.task('default',['moveJs','moveImage','moveCss'], function() {
     return gulp.src('./*.html')
-        .pipe(replace(/.js/g, '.js?v='+getTime))
-        .pipe(replace(/.css/g, '.css?v='+getTime))
+        .pipe(replace(/\.js/g, '.js?v='+getTime))
+        .pipe(replace(/\.css/g, '.css?v='+getTime))
+        .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('moveRes', function(){
-  return gulp.src('./static/**/*')
-    .pipe(gulp.dest('./dist/static'))
+gulp.task('moveImage', function(){
+  return gulp.src('./static/images/**/*')
+    .pipe(gulp.dest(staticResourcePath + "/images"))
 })
 
 gulp.task('moveJs',function(){
-  shell([
-    'npm run dev'
-  ])
-//gulpWebpack(require('./webpack.config'))
-  // return gulp.src('./res/controllers/*.js')
-  //   .pipe(gulpWebpack(config))
-  //   .pipe(gulp.dest('./dist'))
+  webpack(config,function(){})
+})
+
+gulp.task('moveCss', function(){
+  return gulp.src('./static/style/**/*')
+    .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
+    }))
+    .pipe(gulp.dest(staticResourcePath + "/style"))
 })
