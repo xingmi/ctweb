@@ -96,16 +96,20 @@
         <img :src="centerImage[0].image" v-if="centerImage[0]" style="width: 100%">
       </div>
       <div class="third_module clearfix">
-        <video width="600" height="260" controls preload>
-            <source src="/static/1.mp4" type="video/mp4">
-  <!--           <source src="movie.ogg" type="video/ogg"> -->
-            您的浏览器不支持 video 标签。
-        </video>
-        <video width="370" height="260" controls preload>
-            <source src="/static/2.mp4" type="video/mp4">
-  <!--           <source src="movie.ogg" type="video/ogg"> -->
-            您的浏览器不支持 video 标签。
-        </video>
+        <div class="video1" v-change-video-state>
+          <span></span>
+          <video width="600" height="260" preload>
+              <source src="/static/1.mp4" type="video/mp4">
+              您的浏览器不支持 video 标签。
+          </video>
+        </div>
+        <div class="video2" v-change-video-state>
+          <span></span>
+          <video width="370" height="260" preload>
+              <source src="/static/2.mp4" type="video/mp4">
+              您的浏览器不支持 video 标签。
+          </video>
+        </div>
         <div>
             <img src="/static/images/common/qr_code.jpg">
             <p>微信扫一扫</p>

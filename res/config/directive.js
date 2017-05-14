@@ -19,3 +19,20 @@ Vue.directive('change-join-state',{
         })
     }
 })
+
+
+Vue.directive('change-video-state',{
+    bind : function(el){
+        el.addEventListener('click', function(){
+            var status = $(this).find('span').css('display')
+            if(status == 'block'){
+                $(this).find('span').css('display','none')
+                $(this).find('video')[0].play()
+            }else{
+                $(this).find('span').css('display','block')
+                $(this).find('video')[0].pause()
+            }
+
+        })
+    }
+})

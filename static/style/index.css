@@ -288,15 +288,37 @@
   height: 260px;
   overflow: hidden;
 }
+.index .content .third_module .video1{
+  width: 600px;
+  height: 260px;
+  float: left;
+  position: relative;
+  margin-right: 10px;
+}
+.index .content .third_module .video2{
+  width: 370px;
+  height: 260px;
+  float: left;
+  position: relative;
+}
+
+.index .content .third_module .video1 span,
+.index .content .third_module .video2 span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('/static/images/common/video.png') center no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
 .index .content .third_module video{
   padding: 0;
   margin: 0;
   background: #000;
   float: left;
 }
-.index .content .third_module video:first-child{
-  margin-right: 10px;
-}
+
 
 .index .content .third_module div{
   width: 240px;
