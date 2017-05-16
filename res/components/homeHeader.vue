@@ -9,7 +9,7 @@
             <li :class="{current: (currentindex == 3)}"><a href="/productList.html">企业贷款</a></li>
             <li :class="{current: (currentindex == 4)}"><a href="/productList.html">抵押贷款</a></li>
             <li :class="{current: (currentindex == 5)}"><a href="/productList.html">信用贷款</a></li>
-            <li :class="{current: (currentindex == 6)}"><a href="/collaboration.html">加&nbsp;&nbsp;盟</a></li>
+            <li :class="{current: (currentindex == 6)}"><a href="/collaboration.html">合&nbsp;&nbsp;作</a></li>
           </ul>
           <div class="search_input" v-if="showsearchItem">
             <input type="" name="" v-model="keyword" placeholder="搜索一下, 快速找到">
