@@ -27,7 +27,7 @@
                 <span :class="sendStatus" @click="sendCode" v-cloak >{{codeMsg}}</span>
                 <span class="input_box"><input v-model.number="user.code" placeholder="请输入手机验证码"></span>
               </label>
-              <p>请真实填写贷款本人信息，授权并联系您</p>
+              <p>请真实填写本人信息，授权并联系您</p>
               <button v-on:click="postData">{{button}}</button>
             </div>
           </div>

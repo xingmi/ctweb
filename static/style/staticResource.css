@@ -149,12 +149,19 @@
 .contact .content li p{
   padding-left: 20px;
 }
-.contact .content .address{
+.contact .content .address_shanghai{
   position: absolute;
-  width: 300px;
-  height: 200px;
+  width: 280px;
+  height: 170px;
   right: 0;
   top: 10px;
+}
+.contact .content .address{
+  position: absolute;
+  width: 280px;
+  height: 170px;
+  right: 0;
+  top: 210px;
 }
 .declaration .content{
   text-align: justify;
