@@ -26,7 +26,7 @@
             <dt>所需材料</dt>
             <dd v-html="parserMaterials" class="grey_color" style=""></dd>
             <dt>提前还款</dt>
-            <dd>可提前还款，没有违约金。</dd>
+            <dd>可提前还款，{{productDetail.penalty == 1 ? '有' : '没有'}}违约金。</dd>
             <dt>办理流程</dt>
             <dd>
               <img src="/static/images/productDetail/flow.jpg">
